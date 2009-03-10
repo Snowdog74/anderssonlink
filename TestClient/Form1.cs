@@ -27,5 +27,22 @@ namespace TestClient
             textBox1.Text = XMLversion;
             myService.Close();
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            int orderToDeleteId = int.Parse(deleteValue.Text);
+            OrderServiceReference.OrderServiceClient deleteservice = new TestClient.OrderServiceReference.OrderServiceClient();
+            deleteservice.ClientCredentials.UserName.UserName = "karl.bengtsson_gmail";
+            deleteservice.ClientCredentials.UserName.Password = "trustNo1";
+            bool didItWork = deleteservice.DeleteOrder(orderToDeleteId);
+            if (didItWork)
+            {
+                MessageBox.Show("Message " + orderToDeleteId + " was deleted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Message " + orderToDeleteId + " was NOT deleted successfully!");
+            }
+        }
     }
 }

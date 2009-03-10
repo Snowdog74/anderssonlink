@@ -18,6 +18,7 @@ namespace AnderssonLink
     using System.Text;
     using System.Threading;
     using System.Data.SqlClient;
+    using System.Configuration;
 
     /// <summary>
     /// Implementation of the IOrderService interface. The methods in this class, which are used for
@@ -75,16 +76,35 @@ namespace AnderssonLink
             string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
 
             // Generera SQL-query
+            SqlConnection dbConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
+            SqlCommand deleteCommand = new SqlCommand("dbo.DeleteOrder",dbConnection);
+            deleteCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter orderId = new SqlParameter("@OrderId", DbType.Int32);
+            orderId.Value = orderNumber;
+            SqlParameter RecipientParameter = new SqlParameter("@Recipient", DbType.String);
+            RecipientParameter.Value = userName;
+            SqlParameter returnValue = new SqlParameter("@Return_Value", DbType.Boolean);
+            returnValue.Direction = ParameterDirection.ReturnValue;
+            deleteCommand.Parameters.Add(orderId);
+            deleteCommand.Parameters.Add(returnValue);
+            deleteCommand.Parameters.Add(RecipientParameter);
 
+            // TODO: Logga anrop till databas
 
             // Exekvera SQL-query
+            dbConnection.Open();
+            deleteCommand.ExecuteNonQuery();
 
+            // TODO: Logga success/failure
 
             // Tolka resultat
-
+            int returnValueFromDB = int.Parse(returnValue.Value.ToString());
 
             // Returnera resultat
-            return true;
+            if (returnValueFromDB == 1)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
