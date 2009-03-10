@@ -68,11 +68,21 @@ namespace AnderssonLink
         [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public bool DeleteOrder(int orderNumber)
         {
-            // Logga begäran
+            // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
+            // TODO: Logga begäran
+            
             // Läs användarens ID
+            string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+
             // Generera SQL-query
+
+
             // Exekvera SQL-query
+
+
             // Tolka resultat
+
+
             // Returnera resultat
             return true;
         }

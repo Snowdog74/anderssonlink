@@ -1,0 +1,43 @@
+﻿USE [AnderssonLink]
+GO
+/****** Object:  StoredProcedure [dbo].[DeleteOrder]    Script Date: 03/10/2009 16:29:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Karl Bengtsson
+-- Create date: 2009-03-10
+-- Description:	Removes an order if it exists.
+-- =============================================
+CREATE PROCEDURE [dbo].[DeleteOrder](
+	-- Add the parameters for the stored procedure here
+	@OrderId INT,
+	@Recipient NVARCHAR(50)
+	)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    DECLARE @ReturnCode BIT
+    DECLARE @MatchingOrders INT
+
+    SELECT @MatchingOrders = COUNT(*) FROM dbo.Orders 
+        WHERE dbo.Orders.Id = @OrderId AND
+              dbo.Orders.Recipient = @Recipient;
+    -- Insert statements for procedure here
+    IF (@MatchingOrders = 1)
+        BEGIN
+            DELETE FROM dbo.Orders 
+            WHERE dbo.Orders.Id = @OrderId AND
+                  dbo.Orders.Recipient = @Recipient;
+            SET @ReturnCode = 1
+        END
+    ELSE
+        BEGIN
+            SET @ReturnCode = 0
+        END
+    RETURN @ReturnCode
+END
