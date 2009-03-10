@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="RmJu3ww/wx3dVEf7OY1Ix/mP10c=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="PVrEmq8OKhIsFxROn1Yocj/Z+K4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="wsHttpEndpoint">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="wsHttpEndpoint" contract="ServiceReference2.IService1" bindingType="wsHttpBinding" address="http://win-5btszfzq7gd.anderssonlink.local/service" bindingConfiguration="wsHttpEndpoint">
+    <endpoint name="wsHttpEndpoint" contract="OrderServiceReference.IOrderService" bindingType="wsHttpBinding" address="http://win-5btszfzq7gd.anderssonlink.local:8080/service" bindingConfiguration="wsHttpEndpoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://win-5btszfzq7gd.anderssonlink.local/service</serializedValue>
+          <serializedValue>http://win-5btszfzq7gd.anderssonlink.local:8080/service</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -130,7 +130,7 @@
           <serializedValue>wsHttpEndpoint</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceReference2.IService1</serializedValue>
+          <serializedValue>OrderServiceReference.IOrderService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

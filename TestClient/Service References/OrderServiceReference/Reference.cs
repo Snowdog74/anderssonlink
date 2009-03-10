@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestClient.ServiceReference2 {
+namespace TestClient.OrderServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -75,40 +75,43 @@ namespace TestClient.ServiceReference2 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OrderServiceReference.IOrderService")]
+    public interface IOrderService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetOrders", ReplyAction="http://tempuri.org/IService1/GetOrdersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrders", ReplyAction="http://tempuri.org/IOrderService/GetOrdersResponse")]
         System.Data.DataSet GetOrders();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        TestClient.ServiceReference2.CompositeType GetDataUsingDataContract(TestClient.ServiceReference2.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
+        bool DeleteOrder(int orderNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IOrderService/GetDataUsingDataContractResponse")]
+        TestClient.OrderServiceReference.CompositeType GetDataUsingDataContract(TestClient.OrderServiceReference.CompositeType composite);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    public interface IService1Channel : TestClient.ServiceReference2.IService1, System.ServiceModel.IClientChannel {
+    public interface IOrderServiceChannel : TestClient.OrderServiceReference.IOrderService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<TestClient.ServiceReference2.IService1>, TestClient.ServiceReference2.IService1 {
+    public partial class OrderServiceClient : System.ServiceModel.ClientBase<TestClient.OrderServiceReference.IOrderService>, TestClient.OrderServiceReference.IOrderService {
         
-        public Service1Client() {
+        public OrderServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public OrderServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public OrderServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OrderServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OrderServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -116,7 +119,11 @@ namespace TestClient.ServiceReference2 {
             return base.Channel.GetOrders();
         }
         
-        public TestClient.ServiceReference2.CompositeType GetDataUsingDataContract(TestClient.ServiceReference2.CompositeType composite) {
+        public bool DeleteOrder(int orderNumber) {
+            return base.Channel.DeleteOrder(orderNumber);
+        }
+        
+        public TestClient.OrderServiceReference.CompositeType GetDataUsingDataContract(TestClient.OrderServiceReference.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
     }

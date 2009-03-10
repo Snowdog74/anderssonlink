@@ -18,10 +18,13 @@ namespace TestClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceReference2.Service1Client myService = new TestClient.ServiceReference2.Service1Client();
+            OrderServiceReference.OrderServiceClient myService = new TestClient.OrderServiceReference.OrderServiceClient();
             myService.ClientCredentials.UserName.UserName = "karl.bengtsson_gmail";
             myService.ClientCredentials.UserName.Password = "trustNo1";
-            MessageBox.Show(myService.GetOrders().ToString());
+            DataSet orders = myService.GetOrders();
+            dataGridView1.DataSource = orders.Tables[0];
+            string XMLversion = orders.GetXml();
+            textBox1.Text = XMLversion;
             myService.Close();
         }
     }

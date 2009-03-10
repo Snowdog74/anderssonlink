@@ -84,7 +84,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Service References\ServiceReference2\Reference.cs">
+    <Compile Include="Service References\OrderServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -94,28 +94,26 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
+    <WCFMetadataStorage Include="Service References\OrderServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference2\AnderssonLink.xsd" />
-    <None Include="Service References\ServiceReference2\service.wsdl" />
-    <None Include="Service References\ServiceReference2\service.xsd" />
-    <None Include="Service References\ServiceReference2\service1.xsd" />
+    <None Include="Service References\OrderServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
+    <None Include="Service References\OrderServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <None Include="Service References\ServiceReference2\Reference.svcmap">
+    <None Include="Service References\OrderServiceReference\AnderssonLink1.xsd" />
+    <None Include="Service References\OrderServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ServiceReference2\service2.xsd" />
-    <None Include="Service References\ServiceReference2\TestClient.ServiceReference2.CompositeType.datasource">
+    <None Include="Service References\OrderServiceReference\service1.wsdl" />
+    <None Include="Service References\OrderServiceReference\service3.xsd" />
+    <None Include="Service References\OrderServiceReference\service31.xsd" />
+    <None Include="Service References\OrderServiceReference\service32.xsd" />
+    <None Include="Service References\OrderServiceReference\TestClient.OrderServiceReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

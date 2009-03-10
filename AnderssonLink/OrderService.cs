@@ -17,6 +17,7 @@ namespace AnderssonLink
     using System.ServiceModel;
     using System.Text;
     using System.Threading;
+    using System.Data.SqlClient;
 
     /// <summary>
     /// Implementation of the IOrderService interface. The methods in this class, which are used for
@@ -33,21 +34,30 @@ namespace AnderssonLink
         [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public DataSet GetOrders()
         {
-            // Logga begäran
+            // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
+
+            // TODO: Logga begäran
+
             // Läs användarens ID
-            // Fråga SQL-databasen
-            // Transformera resultaten till dataset
-            // Returnera
-            string username = Thread.CurrentPrincipal.Identity.Name;
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable("Hello world table");
-            DataColumn dc = new DataColumn("Hello world column", Type.GetType("System.String"));
-            dt.Columns.Add(dc);
-            ds.Tables.Add(dt);
-            DataRow dr = ds.Tables[0].NewRow();
-            dr[dc] = "hello world column content";
-            ds.Tables[0].Rows.Add(dr);
-            return ds;
+            string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+
+            // Instantiera dataklasser
+            SqlConnection dbConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
+            SqlParameter userNameParam = new SqlParameter("@userNameParam", SqlDbType.NVarChar, 50);
+            userNameParam.Value = userName;
+            SqlCommand selectCommand = new SqlCommand("SELECT * FROM ORDERS WHERE Recipient = @userNameParam",dbConnection);
+            selectCommand.Parameters.Add(userNameParam);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommand);
+            DataSet orderDs = new DataSet();
+
+            // Öppna databasen och hämta data
+            dbConnection.Open();
+            dataAdapter.Fill(orderDs);
+
+            // TODO: Logga lyckad databasåtkomst
+
+            // Returnera dataset
+            return orderDs;
         }
 
         /// <summary>
