@@ -1,17 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="System Andersson AB">
+//     Copyright (c) System Andersson AB 2009. All rights reserved.
+// </copyright>
+// <author>Karl Bengtsson</author>
+// <summary>AnderssonLink test client Main() method.</summary>
+//-----------------------------------------------------------------------
 
 namespace TestClient
 {
-    static class Program
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Main program class.
+    /// </summary>
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

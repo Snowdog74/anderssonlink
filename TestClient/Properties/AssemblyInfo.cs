@@ -1,4 +1,12 @@
-﻿using System.Reflection;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="System Andersson AB">
+//     Copyright (c) System Andersson AB 2009. All rights reserved.
+// </copyright>
+// <author>Karl Bengtsson</author>
+// <summary>AnderssonLink test client assembly information.</summary>
+//-----------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

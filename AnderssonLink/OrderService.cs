@@ -10,15 +10,15 @@ namespace AnderssonLink
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Data;
+    using System.Data.SqlClient;
     using System.Linq;
     using System.Runtime.Serialization;
     using System.Security.Permissions;
     using System.ServiceModel;
     using System.Text;
     using System.Threading;
-    using System.Data.SqlClient;
-    using System.Configuration;
 
     /// <summary>
     /// Implementation of the IOrderService interface. The methods in this class, which are used for
@@ -43,16 +43,16 @@ namespace AnderssonLink
             string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
 
             // Instantiera dataklasser
-            SqlConnection dbConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
+            SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
             SqlParameter userNameParam = new SqlParameter("@userNameParam", SqlDbType.NVarChar, 50);
             userNameParam.Value = userName;
-            SqlCommand selectCommand = new SqlCommand("SELECT * FROM ORDERS WHERE Recipient = @userNameParam",dbConnection);
+            SqlCommand selectCommand = new SqlCommand("SELECT * FROM ORDERS WHERE Recipient = @userNameParam", databaseConnection);
             selectCommand.Parameters.Add(userNameParam);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommand);
             DataSet orderDs = new DataSet();
 
             // Öppna databasen och hämta data
-            dbConnection.Open();
+            databaseConnection.Open();
             dataAdapter.Fill(orderDs);
 
             // TODO: Logga lyckad databasåtkomst
@@ -76,23 +76,23 @@ namespace AnderssonLink
             string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
 
             // Generera SQL-query
-            SqlConnection dbConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
-            SqlCommand deleteCommand = new SqlCommand("dbo.DeleteOrder",dbConnection);
+            SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
+            SqlCommand deleteCommand = new SqlCommand("dbo.DeleteOrder", databaseConnection);
             deleteCommand.CommandType = CommandType.StoredProcedure;
             SqlParameter orderId = new SqlParameter("@OrderId", DbType.Int32);
             orderId.Value = orderNumber;
-            SqlParameter RecipientParameter = new SqlParameter("@Recipient", DbType.String);
-            RecipientParameter.Value = userName;
+            SqlParameter recipientParameter = new SqlParameter("@Recipient", DbType.String);
+            recipientParameter.Value = userName;
             SqlParameter returnValue = new SqlParameter("@Return_Value", DbType.Boolean);
             returnValue.Direction = ParameterDirection.ReturnValue;
             deleteCommand.Parameters.Add(orderId);
             deleteCommand.Parameters.Add(returnValue);
-            deleteCommand.Parameters.Add(RecipientParameter);
+            deleteCommand.Parameters.Add(recipientParameter);
 
             // TODO: Logga anrop till databas
 
             // Exekvera SQL-query
-            dbConnection.Open();
+            databaseConnection.Open();
             deleteCommand.ExecuteNonQuery();
 
             // TODO: Logga success/failure
@@ -102,9 +102,13 @@ namespace AnderssonLink
 
             // Returnera resultat
             if (returnValueFromDB == 1)
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
 
         /// <summary>

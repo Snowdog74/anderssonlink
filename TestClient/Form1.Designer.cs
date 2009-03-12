@@ -1,6 +1,17 @@
-﻿namespace TestClient
+﻿//-----------------------------------------------------------------------
+// <copyright file="Form1.Designer.cs" company="System Andersson AB">
+//     Copyright (c) System Andersson AB 2009. All rights reserved.
+// </copyright>
+// <author>Karl Bengtsson</author>
+// <summary>AnderssonLink test client main form designer generated code.</summary>
+//-----------------------------------------------------------------------
+
+namespace TestClient
 {
-    partial class Form1
+    /// <summary>
+    /// Partial class holding design for the main form Form1.
+    /// </summary>
+    public partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -8,15 +19,41 @@
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
+        /// Button that is used to fetch orders.
+        /// </summary>
+        private System.Windows.Forms.Button button1;
+
+        /// <summary>
+        /// Grid view used to display fetched order data.
+        /// </summary>
+        private System.Windows.Forms.DataGridView dataGridView1;
+
+        /// <summary>
+        /// Textbox in which the received data is displayed in XML form.
+        /// </summary>
+        private System.Windows.Forms.TextBox textBox1;
+
+        /// <summary>
+        /// Button used when deleting an order from the database.
+        /// </summary>
+        private System.Windows.Forms.Button deleteButton;
+
+        /// <summary>
+        /// Textbox holding the ID value of the order to delete with deleteButton.
+        /// </summary>
+        private System.Windows.Forms.TextBox deleteValue;
+
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -44,7 +81,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Hämta data";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // dataGridView1
             // 
@@ -73,7 +110,7 @@
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "Ta bort";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // deleteValue
             // 
@@ -101,12 +138,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.TextBox deleteValue;
     }
 }
 
