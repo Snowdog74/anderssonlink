@@ -39,6 +39,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="articleNo" type="xs:int" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orderDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="deliveryDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="piecePrice" type="xs:int" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerNo" type="xs:int" />
+        <xs:element minOccurs="0" name="customerOrderNo" type="xs:int" />
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="recipient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>

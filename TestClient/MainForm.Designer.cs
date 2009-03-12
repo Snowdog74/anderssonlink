@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Form1.Designer.cs" company="System Andersson AB">
+// <copyright file="MainForm.Designer.cs" company="System Andersson AB">
 //     Copyright (c) System Andersson AB 2009. All rights reserved.
 // </copyright>
 // <author>Karl Bengtsson</author>
@@ -9,9 +9,9 @@
 namespace TestClient
 {
     /// <summary>
-    /// Partial class holding design for the main form Form1.
+    /// Partial class holding design for the main form MainForm.
     /// </summary>
-    public partial class Form1
+    public partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -70,12 +70,13 @@ namespace TestClient
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.deleteValue = new System.Windows.Forms.TextBox();
+            this.insertFormButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(490, 500);
+            this.button1.Location = new System.Drawing.Point(409, 500);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -119,17 +120,28 @@ namespace TestClient
             this.deleteValue.Size = new System.Drawing.Size(27, 20);
             this.deleteValue.TabIndex = 4;
             // 
-            // Form1
+            // insertFormButton
+            // 
+            this.insertFormButton.Location = new System.Drawing.Point(490, 500);
+            this.insertFormButton.Name = "insertFormButton";
+            this.insertFormButton.Size = new System.Drawing.Size(75, 23);
+            this.insertFormButton.TabIndex = 5;
+            this.insertFormButton.Text = "Insert data";
+            this.insertFormButton.UseVisualStyleBackColor = true;
+            this.insertFormButton.Click += new System.EventHandler(this.insertFormButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 535);
+            this.Controls.Add(this.insertFormButton);
             this.Controls.Add(this.deleteValue);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "AnderssonLink Test Client";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -138,6 +150,8 @@ namespace TestClient
         }
 
         #endregion
+
+        private System.Windows.Forms.Button insertFormButton;
     }
 }
 

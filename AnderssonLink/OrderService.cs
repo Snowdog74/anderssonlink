@@ -55,6 +55,9 @@ namespace AnderssonLink
             databaseConnection.Open();
             dataAdapter.Fill(orderDs);
 
+            // Koppla ifrån databasen
+            databaseConnection.Close();
+
             // TODO: Logga lyckad databasåtkomst
 
             // Returnera dataset
@@ -79,15 +82,15 @@ namespace AnderssonLink
             SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
             SqlCommand deleteCommand = new SqlCommand("dbo.DeleteOrder", databaseConnection);
             deleteCommand.CommandType = CommandType.StoredProcedure;
-            SqlParameter orderId = new SqlParameter("@OrderId", DbType.Int32);
-            orderId.Value = orderNumber;
+            SqlParameter orderIdParameter = new SqlParameter("@OrderId", DbType.Int32);
+            orderIdParameter.Value = orderNumber;
             SqlParameter recipientParameter = new SqlParameter("@Recipient", DbType.String);
             recipientParameter.Value = userName;
-            SqlParameter returnValue = new SqlParameter("@Return_Value", DbType.Boolean);
-            returnValue.Direction = ParameterDirection.ReturnValue;
-            deleteCommand.Parameters.Add(orderId);
-            deleteCommand.Parameters.Add(returnValue);
+            SqlParameter returnValueParameter = new SqlParameter("@Return_Value", DbType.Boolean);
+            returnValueParameter.Direction = ParameterDirection.ReturnValue;
+            deleteCommand.Parameters.Add(orderIdParameter);
             deleteCommand.Parameters.Add(recipientParameter);
+            deleteCommand.Parameters.Add(returnValueParameter);
 
             // TODO: Logga anrop till databas
 
@@ -95,21 +98,24 @@ namespace AnderssonLink
             databaseConnection.Open();
             deleteCommand.ExecuteNonQuery();
 
+            // Koppla ifrån databasen
+            databaseConnection.Close();
+
             // TODO: Logga success/failure
 
-            // Tolka resultat
-            int returnValueFromDB = int.Parse(returnValue.Value.ToString());
+            // Hämta returkod / felkod
+            int returnCode = (int)returnValueParameter.Value;
 
-            // Returnera resultat
-            if (returnValueFromDB == 1)
+            // Hantera felkod
+            if (returnCode != 0)
             {
-                // Delete lyckades - returnera true
-                return true;
+                // TODO: Logga success/failure
+                return false;
             }
             else
             {
-                // Delete misslyckades - returnera false
-                return false;
+                // Allt fungerade!
+                return true;
             }
         }
 
@@ -119,7 +125,6 @@ namespace AnderssonLink
         /// If the customer wishes to order multiple products, these must be input one at a time.
         /// Orders thus have more in common with the concept "production order" rather than
         /// "purchase order".
-        /// 
         /// The method requires that the user executing it be member of the role specificed in the
         /// annotation header.
         /// </summary>
@@ -136,7 +141,7 @@ namespace AnderssonLink
         /// <param name="currency">Currency that the order is to be paid in.</param>
         /// <param name="recipient">The company this order is intended for.</param>
         /// <returns>True if insert was successful, else false.</returns>
-        [PrincipalPermission(SecurityAction.Demand, Role = "BizTalk")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public bool InsertOrder(
             int articleNo, 
             string description, 
@@ -151,7 +156,81 @@ namespace AnderssonLink
             string currency, 
             string recipient)
         {
-            throw new NotImplementedException();
+            // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
+
+            // TODO: logga begäran
+
+            // Instantiera databasklasser och kommandon
+            SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
+            SqlCommand insertCommand = new SqlCommand("dbo.InsertOrder", databaseConnection);
+            insertCommand.CommandType = CommandType.StoredProcedure;
+
+            // Sätt alla parametrar
+            SqlParameter articleNoParameter = new SqlParameter("@ArticleNo", DbType.Int32);
+            articleNoParameter.Value = articleNo;
+            SqlParameter descriptionParameter = new SqlParameter("@Description", DbType.String);
+            descriptionParameter.Value = description;
+            SqlParameter orderDateParameter = new SqlParameter("@OrderDate", DbType.Date);
+            orderDateParameter.Value = orderDate;
+            SqlParameter deliveryDateParameter = new SqlParameter("@DeliveryDate", DbType.Date);
+            deliveryDateParameter.Value = deliveryDate;
+            SqlParameter quantityParameter = new SqlParameter("@Quantity", DbType.Int32);
+            quantityParameter.Value = quantity;
+            SqlParameter piecePriceParameter = new SqlParameter("@PiecePrice", DbType.Int32);
+            piecePriceParameter.Value = piecePrice;
+            SqlParameter customerParameter = new SqlParameter("@Customer", DbType.String);
+            customerParameter.Value = customer;
+            SqlParameter customerNoParameter = new SqlParameter("@CustomerNo", DbType.Int32);
+            customerNoParameter.Value = customerNo;
+            SqlParameter customerOrderNoParameter = new SqlParameter("@CustomerOrderNo", DbType.Int32);
+            customerOrderNoParameter.Value = customerOrderNo;
+            SqlParameter infoParameter = new SqlParameter("@Info", DbType.String);
+            infoParameter.Value = info;
+            SqlParameter currencyParameter = new SqlParameter("@Currency", DbType.StringFixedLength);
+            currencyParameter.Value = currency;
+            SqlParameter recipientParameter = new SqlParameter("@Recipient", DbType.String);
+            recipientParameter.Value = recipient;
+            SqlParameter returnValueParameter = new SqlParameter("@Return_Value", DbType.Boolean);
+            returnValueParameter.Direction = ParameterDirection.ReturnValue;
+
+            // Lägg till parametrarna till kommandot
+            insertCommand.Parameters.Add(articleNoParameter);
+            insertCommand.Parameters.Add(descriptionParameter);
+            insertCommand.Parameters.Add(orderDateParameter);
+            insertCommand.Parameters.Add(deliveryDateParameter);
+            insertCommand.Parameters.Add(quantityParameter);
+            insertCommand.Parameters.Add(piecePriceParameter);
+            insertCommand.Parameters.Add(customerParameter);
+            insertCommand.Parameters.Add(customerNoParameter);
+            insertCommand.Parameters.Add(customerOrderNoParameter);
+            insertCommand.Parameters.Add(infoParameter);
+            insertCommand.Parameters.Add(currencyParameter);
+            insertCommand.Parameters.Add(recipientParameter);
+            insertCommand.Parameters.Add(returnValueParameter);
+
+            // TODO: Logga anrop till databas
+
+            // Exekvera SQL-query
+            databaseConnection.Open();
+            insertCommand.ExecuteNonQuery();
+
+            // Koppla ifrån databasen
+            databaseConnection.Close();
+
+            // Hämta returkod / felkod
+            int returnCode = (int)returnValueParameter.Value;
+
+            // Hantera felkod
+            if (returnCode != 0)
+            {
+                // TODO: Logga success/failure
+                return false;
+            }
+            else
+            {
+                // Allt fungerade!
+                return true;
+            }
         }
 
         /// <summary>

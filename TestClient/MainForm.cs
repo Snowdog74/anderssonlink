@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Form1.cs" company="System Andersson AB">
+// <copyright file="MainForm.cs" company="System Andersson AB">
 //     Copyright (c) System Andersson AB 2009. All rights reserved.
 // </copyright>
 // <author>Karl Bengtsson</author>
@@ -18,14 +18,16 @@ namespace TestClient
     using System.Windows.Forms;
 
     /// <summary>
-    /// Partial class holding methods for the main form Form1.
+    /// Partial class holding methods for the main form MainForm.
     /// </summary>
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
+        InsertForm insertForm = new InsertForm();
+
         /// <summary>
-        /// Initializes a new instance of the Form1 class.
+        /// Initializes a new instance of the MainForm class.
         /// </summary>
-        public Form1()
+        public MainForm()
         {
             this.InitializeComponent();
         }
@@ -67,6 +69,11 @@ namespace TestClient
             {
                 MessageBox.Show("Message " + orderToDeleteId + " was NOT deleted successfully!");
             }
+        }
+
+        private void insertFormButton_Click(object sender, EventArgs e)
+        {
+            this.insertForm.Show();
         }
     }
 }

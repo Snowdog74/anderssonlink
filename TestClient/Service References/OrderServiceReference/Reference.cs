@@ -84,6 +84,9 @@ namespace TestClient.OrderServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         bool DeleteOrder(int orderNumber);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/InsertOrder", ReplyAction="http://tempuri.org/IOrderService/InsertOrderResponse")]
+        bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IOrderService/GetDataUsingDataContractResponse")]
         TestClient.OrderServiceReference.CompositeType GetDataUsingDataContract(TestClient.OrderServiceReference.CompositeType composite);
     }
@@ -121,6 +124,10 @@ namespace TestClient.OrderServiceReference {
         
         public bool DeleteOrder(int orderNumber) {
             return base.Channel.DeleteOrder(orderNumber);
+        }
+        
+        public bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient) {
+            return base.Channel.InsertOrder(articleNo, description, orderDate, deliveryDate, quantity, piecePrice, customer, customerNo, customerOrderNo, info, currency, recipient);
         }
         
         public TestClient.OrderServiceReference.CompositeType GetDataUsingDataContract(TestClient.OrderServiceReference.CompositeType composite) {
