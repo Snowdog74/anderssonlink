@@ -36,10 +36,10 @@ namespace AnderssonLink
         /// <summary>
         /// Purges a given order from the database. Run this after retrieving the order.
         /// </summary>
-        /// <param name="orderNumber">Identifier of the order to remove.</param>
+        /// <param name="orderId">Identifier of the order to remove.</param>
         /// <returns>True if the order was removed, else false.</returns>
         [OperationContract]
-        bool DeleteOrder(int orderNumber);
+        bool DeleteOrder(int orderId);
 
         /// <summary>
         /// This method inserts a new order into the database with the fields values given by

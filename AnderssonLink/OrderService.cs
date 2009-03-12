@@ -67,10 +67,10 @@ namespace AnderssonLink
         /// <summary>
         /// Purges a given order from the database. Run this after retrieving the order.
         /// </summary>
-        /// <param name="orderNumber">Identifier of the order to remove.</param>
+        /// <param name="orderId">Identifier of the order to remove.</param>
         /// <returns>True if the order was removed, else false.</returns>
         [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
-        public bool DeleteOrder(int orderNumber)
+        public bool DeleteOrder(int orderId)
         {
             // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
             // TODO: Logga begäran
@@ -83,7 +83,7 @@ namespace AnderssonLink
             SqlCommand deleteCommand = new SqlCommand("dbo.DeleteOrder", databaseConnection);
             deleteCommand.CommandType = CommandType.StoredProcedure;
             SqlParameter orderIdParameter = new SqlParameter("@OrderId", DbType.Int32);
-            orderIdParameter.Value = orderNumber;
+            orderIdParameter.Value = orderId;
             SqlParameter recipientParameter = new SqlParameter("@Recipient", DbType.String);
             recipientParameter.Value = userName;
             SqlParameter returnValueParameter = new SqlParameter("@Return_Value", DbType.Boolean);
