@@ -119,6 +119,9 @@ namespace AnderssonLink
         /// If the customer wishes to order multiple products, these must be input one at a time.
         /// Orders thus have more in common with the concept "production order" rather than
         /// "purchase order".
+        /// 
+        /// The method requires that the user executing it be member of the role specificed in the
+        /// annotation header.
         /// </summary>
         /// <param name="articleNo">Article number.</param>
         /// <param name="description">Article description.</param>
