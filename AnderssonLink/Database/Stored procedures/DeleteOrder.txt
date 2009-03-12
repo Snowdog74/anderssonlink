@@ -1,6 +1,6 @@
 ﻿USE [AnderssonLink]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteOrder]    Script Date: 03/12/2009 13:57:55 ******/
+/****** Object:  StoredProcedure [dbo].[DeleteOrder]    Script Date: 03/12/2009 14:55:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -20,8 +20,24 @@ BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
-        DELETE FROM dbo.Orders 
+
+    DECLARE @ReturnCode BIT
+    DECLARE @MatchingOrders INT
+
+    SELECT @MatchingOrders = COUNT(*) FROM dbo.Orders 
         WHERE dbo.Orders.Id = @OrderId AND
               dbo.Orders.Recipient = @Recipient;
-    RETURN @@ERROR
+    -- Insert statements for procedure here
+    IF (@MatchingOrders = 1)
+        BEGIN
+            DELETE FROM dbo.Orders 
+            WHERE dbo.Orders.Id = @OrderId AND
+                  dbo.Orders.Recipient = @Recipient;
+            SET @ReturnCode = 0
+        END
+    ELSE
+        BEGIN
+            SET @ReturnCode = 1
+        END
+    RETURN @ReturnCode
 END

@@ -64,7 +64,7 @@
             this.insertButton.TabIndex = 0;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
-            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
+            this.insertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // ArticleNoLabel
             // 
@@ -268,7 +268,7 @@
             this.cancelButton.TabIndex = 25;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // InsertForm
             // 

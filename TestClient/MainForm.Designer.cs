@@ -128,7 +128,7 @@ namespace TestClient
             this.insertFormButton.TabIndex = 5;
             this.insertFormButton.Text = "Insert data";
             this.insertFormButton.UseVisualStyleBackColor = true;
-            this.insertFormButton.Click += new System.EventHandler(this.insertFormButton_Click);
+            this.insertFormButton.Click += new System.EventHandler(this.InsertFormButton_Click);
             // 
             // MainForm
             // 

@@ -82,7 +82,7 @@ namespace TestClient.OrderServiceReference {
         System.Data.DataSet GetOrders();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
-        bool DeleteOrder(int orderNumber);
+        bool DeleteOrder(int orderId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/InsertOrder", ReplyAction="http://tempuri.org/IOrderService/InsertOrderResponse")]
         bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient);
@@ -122,8 +122,8 @@ namespace TestClient.OrderServiceReference {
             return base.Channel.GetOrders();
         }
         
-        public bool DeleteOrder(int orderNumber) {
-            return base.Channel.DeleteOrder(orderNumber);
+        public bool DeleteOrder(int orderId) {
+            return base.Channel.DeleteOrder(orderId);
         }
         
         public bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient) {

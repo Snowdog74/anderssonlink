@@ -22,7 +22,10 @@ namespace TestClient
     /// </summary>
     public partial class MainForm : Form
     {
-        InsertForm insertForm = new InsertForm();
+        /// <summary>
+        /// The insert form used in this instance of the application.
+        /// </summary>
+        private InsertForm insertForm = new InsertForm();
 
         /// <summary>
         /// Initializes a new instance of the MainForm class.
@@ -71,7 +74,12 @@ namespace TestClient
             }
         }
 
-        private void insertFormButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Event handler for the event that happens when the insertFormButton is clicked.
+        /// </summary>
+        /// <param name="sender">Sending object (insertFormButton).</param>
+        /// <param name="e">Event arguments.</param>
+        private void InsertFormButton_Click(object sender, EventArgs e)
         {
             this.insertForm.Show();
         }
