@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>9e5d589e-be89-4079-83ad-0e13707d80e9</ProjectGuid>
+    <ProjectGuid>{F0D4A436-3216-4F75-8728-A4BF52F46BD7}</ProjectGuid>
     <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>library</OutputType>
     <GenericProcessing>true</GenericProcessing>
@@ -56,6 +56,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="EFACT_D93A_ORDERS.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>EFACT_D93A_ORDERS</TypeName>
+      <Namespace>AnderssonLinkBizTalkProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Edifact_BatchSchema.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>Edifact_BatchSchema</TypeName>
+      <Namespace>AnderssonLinkBizTalkProject</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublicPrivateKeyFile.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
