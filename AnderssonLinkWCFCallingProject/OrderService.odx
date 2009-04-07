@@ -1,0 +1,298 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="42d768a7-3d41-48aa-b1ef-85bbeb2ac9fc">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="AnderssonLinkWCFCallingProject" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="79f57e22-f9b4-4d58-87fd-866defd6df75" ParentLink="Module_PortType">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:portType name=&quot;IOrderService&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b8f2e144-12a6-4e0b-b92b-a0d4e1082006" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;GetOrders&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="GetOrders" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="63d51a31-8407-4ef3-bec8-b920e7d0eb6d" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_GetOrders_InputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://tempuri.org/:IOrderService_GetOrders_InputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/GetOrders&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="2c56b19a-7fb2-4a4e-b309-11973229888d" ParentLink="OperationDeclaration_ResponseMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_GetOrders_OutputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://tempuri.org/:IOrderService_GetOrders_OutputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/GetOrdersResponse&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="c35bede8-43d4-41cc-a5c2-35a4c8f72581" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;DeleteOrder&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="DeleteOrder" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="6ef4eafc-0d99-4df7-a530-9c311ad170b7" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_DeleteOrder_InputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://tempuri.org/:IOrderService_DeleteOrder_InputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/DeleteOrder&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="882c9500-48ce-403b-a3fd-56c3da434f43" ParentLink="OperationDeclaration_ResponseMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_DeleteOrder_OutputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://tempuri.org/:IOrderService_DeleteOrder_OutputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/DeleteOrderResponse&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="8b9978fd-dea8-463b-9885-358b3c9866f9" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;InsertOrder&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="InsertOrder" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ae1c7cd1-0a9c-435d-98bc-aca3d21f0cba" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_InsertOrder_InputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://tempuri.org/:IOrderService_InsertOrder_InputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/InsertOrder&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="3275b290-0ad1-46e5-b87c-5ec5f7ce1920" ParentLink="OperationDeclaration_ResponseMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_InsertOrder_OutputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://tempuri.org/:IOrderService_InsertOrder_OutputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/InsertOrderResponse&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="19207f9d-ba39-4159-89d5-fe3e215ee44d" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:operation name=&quot;GetDataUsingDataContract&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="GetDataUsingDataContract" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9209ab86-bb22-4d1e-b3a8-b5bd294beb30" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_GetDataUsingDataContract_InputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:input message=&quot;http://tempuri.org/:IOrderService_GetDataUsingDataContract_InputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/GetDataUsingDataContract&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="db0ad8ea-bb60-4feb-830f-28a42218d410" ParentLink="OperationDeclaration_ResponseMessageRef">
+                    <om:Property Name="Ref" Value="AnderssonLinkWCFCallingProject.IOrderService_GetDataUsingDataContract_OutputMessage" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="&lt;wsdl:output message=&quot;http://tempuri.org/:IOrderService_GetDataUsingDataContract_OutputMessage&quot;/&gt;&#xD;&#xA;Action=&quot;http://tempuri.org/IOrderService/GetDataUsingDataContractResponse&quot;&#xD;&#xA;" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="292c5ce1-a2aa-450c-aef2-022e05aea97f" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_GetOrders_InputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_GetOrders_InputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="68b187f4-789a-43cb-b547-79d4ace65ac0" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.GetOrders" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b45394af-a61e-4344-afa5-3fb45086ad90" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_GetOrders_OutputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_GetOrders_OutputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="fd3f54d0-401e-4240-8ee3-f99d9bc05b8f" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.GetOrdersResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b243b2a8-5eb5-4338-ae17-6d192fd3045b" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_DeleteOrder_InputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_DeleteOrder_InputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="6f850a61-25ec-4d56-9e6a-fb8b0cba08c0" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.DeleteOrder" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="c6dab9e2-70a6-4691-bef6-91b3846e8d1f" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_DeleteOrder_OutputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_DeleteOrder_OutputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="a35b8f9b-3350-47cd-a8a2-d7a30efc846e" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.DeleteOrderResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b06f22eb-1063-494a-8f58-c7a843283f5d" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_InsertOrder_InputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_InsertOrder_InputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="c68939db-77d7-42bf-b466-a8d7ed72e6cc" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.InsertOrder" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="8483664c-c776-4fb6-a91b-c2c61933d904" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_InsertOrder_OutputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_InsertOrder_OutputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="b5db2a0c-cf6a-4675-b830-e33492a9b387" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.InsertOrderResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="459ca732-ac3e-4d1f-846d-4ee99f62cb4a" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_GetDataUsingDataContract_InputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_GetDataUsingDataContract_InputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="937b7f0d-1f9e-4f65-afe5-d39e9cf84110" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.GetDataUsingDataContract" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="4d8887d1-9610-4ced-ad97-ec75a6198aae" ParentLink="Module_MessageType">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:message name=&quot;IOrderService_GetDataUsingDataContract_OutputMessage&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="IOrderService_GetDataUsingDataContract_OutputMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="PartDeclaration" OID="9d2635c8-02ac-4b97-b099-4c91c4782e33" ParentLink="MultipartMessageType_PartDeclaration">
+                <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.OrderService_tempuri_org.GetDataUsingDataContractResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="AnalystComments" Value="&lt;wsdl:part name=&quot;parameters&quot;/&gt;&#xD;&#xA;" />
+                <om:Property Name="Name" Value="parameters" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="59471bc1-da38-4cba-b406-ed728bcf487d" ParentLink="Module_ServiceDeclaration">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="AnalystComments" Value="&lt;wsdl:service name=&quot;OrderService&quot;/&gt;&#xD;&#xA;" />
+            <om:Property Name="Name" Value="OrderServiceClient" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="2bd7e500-629b-4a3b-ba20-190e74de85f2" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module AnderssonLinkWCFCallingProject
+{
+    internal messagetype IOrderService_GetOrders_InputMessage
+    {
+        body OrderService_tempuri_org.GetOrders parameters;
+    };
+    internal messagetype IOrderService_GetOrders_OutputMessage
+    {
+        body OrderService_tempuri_org.GetOrdersResponse parameters;
+    };
+    internal messagetype IOrderService_DeleteOrder_InputMessage
+    {
+        body OrderService_tempuri_org.DeleteOrder parameters;
+    };
+    internal messagetype IOrderService_DeleteOrder_OutputMessage
+    {
+        body OrderService_tempuri_org.DeleteOrderResponse parameters;
+    };
+    internal messagetype IOrderService_InsertOrder_InputMessage
+    {
+        body OrderService_tempuri_org.InsertOrder parameters;
+    };
+    internal messagetype IOrderService_InsertOrder_OutputMessage
+    {
+        body OrderService_tempuri_org.InsertOrderResponse parameters;
+    };
+    internal messagetype IOrderService_GetDataUsingDataContract_InputMessage
+    {
+        body OrderService_tempuri_org.GetDataUsingDataContract parameters;
+    };
+    internal messagetype IOrderService_GetDataUsingDataContract_OutputMessage
+    {
+        body OrderService_tempuri_org.GetDataUsingDataContractResponse parameters;
+    };
+    internal porttype IOrderService
+    {
+        requestresponse GetOrders
+        {
+            IOrderService_GetOrders_InputMessage, IOrderService_GetOrders_OutputMessage
+        };
+        requestresponse DeleteOrder
+        {
+            IOrderService_DeleteOrder_InputMessage, IOrderService_DeleteOrder_OutputMessage
+        };
+        requestresponse InsertOrder
+        {
+            IOrderService_InsertOrder_InputMessage, IOrderService_InsertOrder_OutputMessage
+        };
+        requestresponse GetDataUsingDataContract
+        {
+            IOrderService_GetDataUsingDataContract_InputMessage, IOrderService_GetDataUsingDataContract_OutputMessage
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service OrderServiceClient
+    {
+        body ()
+        {
+        }
+    }
+}
+

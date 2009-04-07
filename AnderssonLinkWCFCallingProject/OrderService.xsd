@@ -1,5 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--Warning: Schema changed to permit compilation in BizTalk project.-->
   <xs:element name="DataSet" nillable="true">
     <xs:complexType>
       <xs:annotation>
@@ -8,7 +9,8 @@
         </xs:appinfo>
       </xs:annotation>
       <xs:sequence>
-        <xs:element ref="xs:schema" />
+        <!--Warning: Changed <xs:element ref="xs:schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" /> to <xs:any xmlns:xs="http://www.w3.org/2001/XMLSchema" /> to permit compilation.-->
+        <xs:any />
         <xs:any />
       </xs:sequence>
     </xs:complexType>
