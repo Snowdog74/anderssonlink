@@ -97,11 +97,33 @@
     </XLang>
   </ItemGroup>
   <ItemGroup>
+    <XLang Include="BizTalk Orchestration1.odx">
+      <SubType>Task</SubType>
+      <TypeName>BizTalk_Orchestration1</TypeName>
+      <Namespace>AnderssonLinkWCFCallingProject</Namespace>
+    </XLang>
+    <Map Include="EDItoWCF.btm">
+      <TypeName>Map1</TypeName>
+      <Namespace>AnderssonLinkWCFCallingProject</Namespace>
+      <SubType>Task</SubType>
+    </Map>
     <Content Include="OrderService.BindingInfo.xml" />
     <Content Include="OrderService_Custom.BindingInfo.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="EFACT_D93A_ORDERS.xsd">
+      <TypeName>EFACT_D93A_ORDERS</TypeName>
+      <Namespace>AnderssonLinkWCFCallingProject</Namespace>
+      <SubType>
+      </SubType>
+    </Schema>
     <None Include="PublicPrivateKeyFile.snk" />
+    <Schema Include="WCFServiceCallSchema.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>WCFServiceCallSchema</TypeName>
+      <Namespace>AnderssonLinkWCFCallingProject</Namespace>
+    </Schema>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
