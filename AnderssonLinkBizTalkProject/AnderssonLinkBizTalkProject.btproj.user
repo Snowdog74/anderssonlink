@@ -10,7 +10,7 @@
 			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
 			<TestMapSourceType>0</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>
-			<EditorOutputInstanceFilename>C:\Users\Administrator\Desktop\generated.edi.instance.txt</EditorOutputInstanceFilename>
+			<EditorOutputInstanceFilename>C:\Users\Administrator\Desktop\edi.batch.txt</EditorOutputInstanceFilename>
 			<EditorInputInstanceFilename>C:\Users\Administrator\Desktop\orders.edi</EditorInputInstanceFilename>
 			<GenerateInstanceOutputType>1</GenerateInstanceOutputType>
 			<ValidateInstanceInputType>1</ValidateInstanceInputType>
@@ -24,7 +24,7 @@
 			<TestMapOutputInstanceFilename></TestMapOutputInstanceFilename>
 			<TestMapSourceType>0</TestMapSourceType>
 			<TestMapTargetType>0</TestMapTargetType>
-			<EditorOutputInstanceFilename>C:\Users\Administrator\Desktop\generated.edi.instance.txt</EditorOutputInstanceFilename>
+			<EditorOutputInstanceFilename>C:\Users\Administrator\Desktop\edi.instance.txt</EditorOutputInstanceFilename>
 			<EditorInputInstanceFilename>C:\Users\Administrator\Desktop\generated.edi.instance.txt</EditorInputInstanceFilename>
 			<GenerateInstanceOutputType>1</GenerateInstanceOutputType>
 			<ValidateInstanceInputType>1</ValidateInstanceInputType>

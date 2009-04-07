@@ -37,3 +37,6 @@ using Microsoft.BizTalk.XLANGs.BTXEngine;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+[assembly: AssemblyDelaySign(false)]
+[assembly: AssemblyKeyFile("PublicPrivateKeyFile.snk")]

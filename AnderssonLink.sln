@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnderssonLink", "AnderssonL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{A0E7260B-AC2D-4570-ADFC-35E79EB31E9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnderssonLinkBizTalkProject", "AnderssonLinkBizTalkProject\AnderssonLinkBizTalkProject.btproj", "{F0D4A436-3216-4F75-8728-A4BF52F46BD7}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -23,6 +25,12 @@ Global
 		{A0E7260B-AC2D-4570-ADFC-35E79EB31E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E7260B-AC2D-4570-ADFC-35E79EB31E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E7260B-AC2D-4570-ADFC-35E79EB31E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D4A436-3216-4F75-8728-A4BF52F46BD7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

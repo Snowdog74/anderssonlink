@@ -76,6 +76,11 @@
   <ItemGroup>
     <None Include="PublicPrivateKeyFile.snk" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Testmeddelanden\edi.batch.txt" />
+    <Content Include="Testmeddelanden\edi.instance.txt" />
+    <Content Include="Testmeddelanden\orders.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>
