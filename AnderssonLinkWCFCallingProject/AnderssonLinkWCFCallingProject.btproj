@@ -97,11 +97,6 @@
     </XLang>
   </ItemGroup>
   <ItemGroup>
-    <XLang Include="BizTalk Orchestration1.odx">
-      <SubType>Task</SubType>
-      <TypeName>BizTalk_Orchestration1</TypeName>
-      <Namespace>AnderssonLinkWCFCallingProject</Namespace>
-    </XLang>
     <Map Include="EDItoWCF.btm">
       <TypeName>Map1</TypeName>
       <Namespace>AnderssonLinkWCFCallingProject</Namespace>
