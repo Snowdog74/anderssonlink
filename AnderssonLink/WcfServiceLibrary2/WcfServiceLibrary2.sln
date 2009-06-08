@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary2", "WcfServiceLibrary2\WcfServiceLibrary2.csproj", "{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{C9E1B1ED-4758-4F63-BC67-6001BA61F030}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A} = {69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BizTalk Server Project1", "BizTalk Server Project1\BizTalk Server Project1.btproj", "{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FC7752-B7D9-4F9F-B2A4-A5E1E0EE573A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E1B1ED-4758-4F63-BC67-6001BA61F030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E1B1ED-4758-4F63-BC67-6001BA61F030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E1B1ED-4758-4F63-BC67-6001BA61F030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E1B1ED-4758-4F63-BC67-6001BA61F030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B46FD7-C6B8-4950-9A6F-1C6096EBBBFD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
