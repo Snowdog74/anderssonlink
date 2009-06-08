@@ -32,7 +32,7 @@ namespace AnderssonLink
         /// </summary>
         /// <returns>A dataset containing the orders. This should be changed to a custom class defined
         /// elsewhere so that we ues a consistent schema.</returns>
-        [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
+        ///[PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public DataSet GetOrders()
         {
             // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
@@ -40,7 +40,8 @@ namespace AnderssonLink
             // TODO: Logga begäran
 
             // Läs användarens ID
-            string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+            //string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+            string userName = "karl.bengtsson_gmail";
 
             // Instantiera dataklasser
             SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
@@ -69,14 +70,15 @@ namespace AnderssonLink
         /// </summary>
         /// <param name="orderId">Identifier of the order to remove.</param>
         /// <returns>True if the order was removed, else false.</returns>
-        [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
+        ///[PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public bool DeleteOrder(int orderId)
         {
             // TODO: Wrappa alltihopa med try/catch och fixa ett FaultContract
             // TODO: Logga begäran
             
             // Läs användarens ID
-            string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+            //string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
+            string userName = "karl.bengtsson_gmail";
 
             // Generera SQL-query
             SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
@@ -119,6 +121,13 @@ namespace AnderssonLink
             }
         }
 
+
+        public bool InsertOrderByObject(InsertOrderMessage message)
+        {
+            return InsertOrder(message.articleNo, message.description, message.orderDate, message.deliveryDate, message.quantity, message.piecePrice,
+                message.customer, message.customerNo, message.customerOrderNo, message.info, message.currency, message.recipient);
+        }
+
         /// <summary>
         /// This method inserts a new order into the database with the fields values given by
         /// the method parameters. Each order is for exactly one product (at a given quantity).
@@ -141,7 +150,7 @@ namespace AnderssonLink
         /// <param name="currency">Currency that the order is to be paid in.</param>
         /// <param name="recipient">The company this order is intended for.</param>
         /// <returns>True if insert was successful, else false.</returns>
-        [PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
+        ///[PrincipalPermission(SecurityAction.Demand, Role = "Subscribers")]
         public bool InsertOrder(
             int articleNo, 
             string description, 
@@ -231,22 +240,6 @@ namespace AnderssonLink
                 // Allt fungerade!
                 return true;
             }
-        }
-
-        /// <summary>
-        /// Dummy method to display use of composite types. This will be removed.
-        /// </summary>
-        /// <param name="composite">input values</param>
-        /// <returns>modified input with suffix added</returns>
-        [Obsolete("Example code, will be removed")]
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-
-            return composite;
         }
     }
 }

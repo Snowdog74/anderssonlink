@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InsertOrderMessage.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OrderService.cs" />

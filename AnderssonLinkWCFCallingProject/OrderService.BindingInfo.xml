@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Adapter.Wcf.Consuming, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0">
-  <Timestamp>2009-04-07T12:05:46.9171968+02:00</Timestamp>
+  <Timestamp>2009-06-04T08:23:38.1883696+02:00</Timestamp>
   <SendPortCollection>
     <SendPort Name="WcfSendPort_OrderService_wsHttpEndpoint" IsStatic="true" IsTwoWay="true" BindingOption="0">
       <Description>service "OrderService" port "wsHttpEndpoint"</Description>
@@ -13,8 +13,8 @@
   &lt;MessageEncoding vt="8"&gt;Text&lt;/MessageEncoding&gt;
   &lt;TextEncoding vt="8"&gt;utf-8&lt;/TextEncoding&gt;
   &lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;
-  &lt;SecurityMode vt="8"&gt;Message&lt;/SecurityMode&gt;
-  &lt;MessageClientCredentialType vt="8"&gt;UserName&lt;/MessageClientCredentialType&gt;
+  &lt;SecurityMode vt="8"&gt;None&lt;/SecurityMode&gt;
+  &lt;MessageClientCredentialType vt="8"&gt;Windows&lt;/MessageClientCredentialType&gt;
   &lt;AlgorithmSuite vt="8"&gt;Basic256&lt;/AlgorithmSuite&gt;
   &lt;NegotiateServiceCredential vt="11"&gt;-1&lt;/NegotiateServiceCredential&gt;
   &lt;EstablishSecurityContext vt="11"&gt;-1&lt;/EstablishSecurityContext&gt;
@@ -25,7 +25,7 @@
   &amp;lt;Operation Name="GetOrders" Action="http://tempuri.org/IOrderService/GetOrders" /&amp;gt;
   &amp;lt;Operation Name="DeleteOrder" Action="http://tempuri.org/IOrderService/DeleteOrder" /&amp;gt;
   &amp;lt;Operation Name="InsertOrder" Action="http://tempuri.org/IOrderService/InsertOrder" /&amp;gt;
-  &amp;lt;Operation Name="GetDataUsingDataContract" Action="http://tempuri.org/IOrderService/GetDataUsingDataContract" /&amp;gt;
+  &amp;lt;Operation Name="InsertOrderByObject" Action="http://tempuri.org/IOrderService/InsertOrderByObject" /&amp;gt;
 &amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;
   &lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;
   &lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;
@@ -35,9 +35,6 @@
   &lt;OpenTimeout vt="8"&gt;00:01:00&lt;/OpenTimeout&gt;
   &lt;SendTimeout vt="8"&gt;00:01:00&lt;/SendTimeout&gt;
   &lt;CloseTimeout vt="8"&gt;00:01:00&lt;/CloseTimeout&gt;
-  &lt;Identity vt="8"&gt;&amp;lt;identity&amp;gt;
-  &amp;lt;certificate encodedValue="AwAAAAEAAAAUAAAAlcwlB7dTyDQGInBNQoEXs/aC65cgAAAAAQAAABYCAAAwggISMIIBe6ADAgECAhBNvj2ybvG9rkF1yi2wYks8MA0GCSqGSIb3DQEBBAUAMBUxEzARBgNVBAMTClJvb3RDQVRlc3QwHhcNMDkwMzAyMTQyODI4WhcNMzkxMjMxMjM1OTU5WjAuMSwwKgYDVQQDEyNXSU4tNUJUU1pGWlE3R0QuYW5kZXJzc29ubGluay5sb2NhbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAttJ9160AohcAbuRSKfWSe6YPNeynZaTB8wwzEQIgR9R+r2P3Nas523KNdGgDkI+BDw6IA7azQkn41wlj1bX9c7WBJrL8cVUGW5tQ+DAwDe+xUUqctWW5JxraX894Ra9ea8jnv85P4JufsP2WqnnBFo5JQZUpjjGqzoiutlpNsXcCAwEAAaNKMEgwRgYDVR0BBD8wPYAQLdFPsIslpxcg/N+Ldu2xj6EXMBUxEzARBgNVBAMTClJvb3RDQVRlc3SCEJfaZWrF8MyIQnZ3aaYycoswDQYJKoZIhvcNAQEEBQADgYEATiBcMsBOE8Utkl+shh0ml7YxsWygLII/gNQ7aunXti9259IUDUO0nmdcMj5oNmD1sxLLsplH9DBhdl9Gx4Kq7DSAOfFKEEBa4K0DrQSZcQhF4MJpksR3th6bXdlB0v3l3O3umud9ZqNtnw+yyDlJGuLciSNKLPrY+LMxqBUCmVg=" /&amp;gt;
-&amp;lt;/identity&amp;gt;&lt;/Identity&gt;
 &lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>

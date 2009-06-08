@@ -66,14 +66,12 @@
     </Schema>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="Edifact_BatchSchema.xsd">
+    <None Include="Edifact_BatchSchema.xsd">
       <SubType>
       </SubType>
       <TypeName>Edifact_BatchSchema</TypeName>
       <Namespace>AnderssonLinkBizTalkProject</Namespace>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
+    </None>
     <None Include="PublicPrivateKeyFile.snk" />
   </ItemGroup>
   <ItemGroup>

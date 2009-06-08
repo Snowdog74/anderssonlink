@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Adapter.Wcf.Consuming, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0">
-  <Timestamp>2009-04-07T12:05:46.9242192+02:00</Timestamp>
+  <Timestamp>2009-06-04T08:23:38.2084336+02:00</Timestamp>
   <SendPortCollection>
     <SendPort Name="WcfSendPort_OrderService_wsHttpEndpoint_Custom" IsStatic="true" IsTwoWay="true" BindingOption="0">
       <Description>service "OrderService" port "wsHttpEndpoint"</Description>
@@ -10,12 +10,12 @@
         <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
         <TransportTypeData>&lt;CustomProps&gt;
   &lt;BindingType vt="8"&gt;wsHttpBinding&lt;/BindingType&gt;
-  &lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="wsHttpEndpoint" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" bypassProxyOnLocal="false" transactionFlow="false" hostNameComparisonMode="StrongWildcard" maxBufferPoolSize="524288" maxReceivedMessageSize="65536" messageEncoding="Text" textEncoding="utf-8" useDefaultWebProxy="true" allowCookies="false"&amp;gt;&amp;lt;readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" /&amp;gt;&amp;lt;reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false" /&amp;gt;&amp;lt;security mode="Message"&amp;gt;&amp;lt;transport clientCredentialType="Windows" proxyCredentialType="None" realm="" /&amp;gt;&amp;lt;message clientCredentialType="UserName" negotiateServiceCredential="true" algorithmSuite="Default" establishSecurityContext="true" /&amp;gt;&amp;lt;/security&amp;gt;&amp;lt;/binding&amp;gt;&lt;/BindingConfiguration&gt;
+  &lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="wsHttpEndpoint" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" bypassProxyOnLocal="false" transactionFlow="false" hostNameComparisonMode="StrongWildcard" maxBufferPoolSize="524288" maxReceivedMessageSize="65536" messageEncoding="Text" textEncoding="utf-8" useDefaultWebProxy="true" allowCookies="false"&amp;gt;&amp;lt;readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" /&amp;gt;&amp;lt;reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false" /&amp;gt;&amp;lt;security mode="None"&amp;gt;&amp;lt;transport clientCredentialType="Windows" proxyCredentialType="None" realm="" /&amp;gt;&amp;lt;message clientCredentialType="Windows" negotiateServiceCredential="true" establishSecurityContext="true" /&amp;gt;&amp;lt;/security&amp;gt;&amp;lt;/binding&amp;gt;&lt;/BindingConfiguration&gt;
   &lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
   &amp;lt;Operation Name="GetOrders" Action="http://tempuri.org/IOrderService/GetOrders" /&amp;gt;
   &amp;lt;Operation Name="DeleteOrder" Action="http://tempuri.org/IOrderService/DeleteOrder" /&amp;gt;
   &amp;lt;Operation Name="InsertOrder" Action="http://tempuri.org/IOrderService/InsertOrder" /&amp;gt;
-  &amp;lt;Operation Name="GetDataUsingDataContract" Action="http://tempuri.org/IOrderService/GetDataUsingDataContract" /&amp;gt;
+  &amp;lt;Operation Name="InsertOrderByObject" Action="http://tempuri.org/IOrderService/InsertOrderByObject" /&amp;gt;
 &amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;
   &lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;
   &lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;
@@ -25,9 +25,7 @@
   &lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;
   &lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;
   &lt;IsolationLevel vt="8"&gt;Serializable&lt;/IsolationLevel&gt;
-  &lt;Identity vt="8"&gt;&amp;lt;identity&amp;gt;
-  &amp;lt;certificate encodedValue="AwAAAAEAAAAUAAAAlcwlB7dTyDQGInBNQoEXs/aC65cgAAAAAQAAABYCAAAwggISMIIBe6ADAgECAhBNvj2ybvG9rkF1yi2wYks8MA0GCSqGSIb3DQEBBAUAMBUxEzARBgNVBAMTClJvb3RDQVRlc3QwHhcNMDkwMzAyMTQyODI4WhcNMzkxMjMxMjM1OTU5WjAuMSwwKgYDVQQDEyNXSU4tNUJUU1pGWlE3R0QuYW5kZXJzc29ubGluay5sb2NhbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAttJ9160AohcAbuRSKfWSe6YPNeynZaTB8wwzEQIgR9R+r2P3Nas523KNdGgDkI+BDw6IA7azQkn41wlj1bX9c7WBJrL8cVUGW5tQ+DAwDe+xUUqctWW5JxraX894Ra9ea8jnv85P4JufsP2WqnnBFo5JQZUpjjGqzoiutlpNsXcCAwEAAaNKMEgwRgYDVR0BBD8wPYAQLdFPsIslpxcg/N+Ldu2xj6EXMBUxEzARBgNVBAMTClJvb3RDQVRlc3SCEJfaZWrF8MyIQnZ3aaYycoswDQYJKoZIhvcNAQEEBQADgYEATiBcMsBOE8Utkl+shh0ml7YxsWygLII/gNQ7aunXti9259IUDUO0nmdcMj5oNmD1sxLLsplH9DBhdl9Gx4Kq7DSAOfFKEEBa4K0DrQSZcQhF4MJpksR3th6bXdlB0v3l3O3umud9ZqNtnw+yyDlJGuLciSNKLPrY+LMxqBUCmVg=" /&amp;gt;
-&amp;lt;/identity&amp;gt;&lt;/Identity&gt;
+  &lt;Identity vt="8" /&gt;
 &lt;/CustomProps&gt;</TransportTypeData>
         <RetryCount>3</RetryCount>
         <RetryInterval>5</RetryInterval>

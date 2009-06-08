@@ -113,18 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <None Include="Service References\OrderServiceReference\AnderssonLink1.xsd" />
+    <None Include="Service References\OrderServiceReference\AnderssonLink.xsd" />
     <None Include="Service References\OrderServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\OrderServiceReference\service.xsd" />
     <None Include="Service References\OrderServiceReference\service1.wsdl" />
-    <None Include="Service References\OrderServiceReference\service3.xsd" />
     <None Include="Service References\OrderServiceReference\service31.xsd" />
     <None Include="Service References\OrderServiceReference\service32.xsd" />
-    <None Include="Service References\OrderServiceReference\TestClient.OrderServiceReference.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

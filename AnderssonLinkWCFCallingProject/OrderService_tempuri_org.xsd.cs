@@ -4,7 +4,7 @@ namespace AnderssonLinkWCFCallingProject {
     
     [SchemaType(SchemaTypeEnum.Document)]
     [System.SerializableAttribute()]
-    [SchemaRoots(new string[] {@"GetOrders", @"GetOrdersResponse", @"DeleteOrder", @"DeleteOrderResponse", @"InsertOrder", @"InsertOrderResponse", @"GetDataUsingDataContract", @"GetDataUsingDataContractResponse"})]
+    [SchemaRoots(new string[] {@"GetOrders", @"GetOrdersResponse", @"DeleteOrder", @"DeleteOrderResponse", @"InsertOrder", @"InsertOrderResponse", @"InsertOrderByObject", @"InsertOrderByObjectResponse"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"AnderssonLinkWCFCallingProject.OrderService_schemas_datacontract_org_2004_07_AnderssonLink", typeof(AnderssonLinkWCFCallingProject.OrderService_schemas_datacontract_org_2004_07_AnderssonLink))]
     public sealed class OrderService_tempuri_org : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
@@ -85,17 +85,17 @@ namespace AnderssonLinkWCFCallingProject {
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name=""GetDataUsingDataContract"">
+  <xs:element name=""InsertOrderByObject"">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1=""http://schemas.datacontract.org/2004/07/AnderssonLink"" minOccurs=""0"" name=""composite"" nillable=""true"" type=""q1:CompositeType"" />
+        <xs:element xmlns:q1=""http://schemas.datacontract.org/2004/07/AnderssonLink"" minOccurs=""0"" name=""message"" nillable=""true"" type=""q1:InsertOrderMessage"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name=""GetDataUsingDataContractResponse"">
+  <xs:element name=""InsertOrderByObjectResponse"">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2=""http://schemas.datacontract.org/2004/07/AnderssonLink"" minOccurs=""0"" name=""GetDataUsingDataContractResult"" nillable=""true"" type=""q2:CompositeType"" />
+        <xs:element minOccurs=""0"" name=""InsertOrderByObjectResult"" type=""xs:boolean"" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -119,8 +119,8 @@ namespace AnderssonLinkWCFCallingProject {
                 _RootElements[3] = "DeleteOrderResponse";
                 _RootElements[4] = "InsertOrder";
                 _RootElements[5] = "InsertOrderResponse";
-                _RootElements[6] = "GetDataUsingDataContract";
-                _RootElements[7] = "GetDataUsingDataContractResponse";
+                _RootElements[6] = "InsertOrderByObject";
+                _RootElements[7] = "InsertOrderByObjectResponse";
                 return _RootElements;
             }
         }
@@ -344,15 +344,15 @@ namespace AnderssonLinkWCFCallingProject {
             }
         }
         
-        [Schema(@"http://tempuri.org/",@"GetDataUsingDataContract")]
+        [Schema(@"http://tempuri.org/",@"InsertOrderByObject")]
         [System.SerializableAttribute()]
-        [SchemaRoots(new string[] {@"GetDataUsingDataContract"})]
-        public sealed class GetDataUsingDataContract : Microsoft.XLANGs.BaseTypes.SchemaBase {
+        [SchemaRoots(new string[] {@"InsertOrderByObject"})]
+        public sealed class InsertOrderByObject : Microsoft.XLANGs.BaseTypes.SchemaBase {
             
             [System.NonSerializedAttribute()]
             private static object _rawSchema;
             
-            public GetDataUsingDataContract() {
+            public InsertOrderByObject() {
             }
             
             public override string XmlContent {
@@ -364,7 +364,7 @@ namespace AnderssonLinkWCFCallingProject {
             public override string[] RootNodes {
                 get {
                     string[] _RootElements = new string [1];
-                    _RootElements[0] = "GetDataUsingDataContract";
+                    _RootElements[0] = "InsertOrderByObject";
                     return _RootElements;
                 }
             }
@@ -379,15 +379,15 @@ namespace AnderssonLinkWCFCallingProject {
             }
         }
         
-        [Schema(@"http://tempuri.org/",@"GetDataUsingDataContractResponse")]
+        [Schema(@"http://tempuri.org/",@"InsertOrderByObjectResponse")]
         [System.SerializableAttribute()]
-        [SchemaRoots(new string[] {@"GetDataUsingDataContractResponse"})]
-        public sealed class GetDataUsingDataContractResponse : Microsoft.XLANGs.BaseTypes.SchemaBase {
+        [SchemaRoots(new string[] {@"InsertOrderByObjectResponse"})]
+        public sealed class InsertOrderByObjectResponse : Microsoft.XLANGs.BaseTypes.SchemaBase {
             
             [System.NonSerializedAttribute()]
             private static object _rawSchema;
             
-            public GetDataUsingDataContractResponse() {
+            public InsertOrderByObjectResponse() {
             }
             
             public override string XmlContent {
@@ -399,7 +399,7 @@ namespace AnderssonLinkWCFCallingProject {
             public override string[] RootNodes {
                 get {
                     string[] _RootElements = new string [1];
-                    _RootElements[0] = "GetDataUsingDataContractResponse";
+                    _RootElements[0] = "InsertOrderByObjectResponse";
                     return _RootElements;
                 }
             }

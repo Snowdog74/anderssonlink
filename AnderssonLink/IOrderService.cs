@@ -76,51 +76,7 @@ namespace AnderssonLink
             string currency,
             string recipient);
 
-        /// <summary>
-        /// Dummy method to display use of composite types. This will be removed.
-        /// </summary>
-        /// <param name="composite">input values</param>
-        /// <returns>modified input with suffix added</returns>
-        [Obsolete("Example code, will be removed")]
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-    }
-
-    /// <summary>
-    /// Composite type example. Will be removed.
-    /// </summary>
-    [Obsolete("Example code, will be removed")]
-    [DataContract]
-    public class CompositeType
-    {
-        /// <summary>
-        /// Some private boolean example value.
-        /// </summary>
-        private bool boolValue = true;
-
-        /// <summary>
-        /// Some private string value for the example.
-        /// </summary>
-        private string stringValue = "Hello ";
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the private attribute boolValue is set.
-        /// </summary>
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return this.boolValue; }
-            set { this.boolValue = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the private attribute stringValue
-        /// </summary>
-        [DataMember]
-        public string StringValue
-        {
-            get { return this.stringValue; }
-            set { this.stringValue = value; }
-        }
+        bool InsertOrderByObject(InsertOrderMessage message);
     }
 }
