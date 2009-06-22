@@ -16,6 +16,7 @@ namespace TestClient
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using TestClient.OrderServiceReference;
 
     /// <summary>
     /// Form for inserting new orders.
@@ -50,19 +51,18 @@ namespace TestClient
             OrderServiceReference.OrderServiceClient insertClient = new TestClient.OrderServiceReference.OrderServiceClient();
             insertClient.ClientCredentials.UserName.UserName = "karl.bengtsson_gmail";
             insertClient.ClientCredentials.UserName.Password = "trustNo1";
-            bool didItWork = insertClient.InsertOrder(
-                int.Parse(this.articleNoField.Text),
-                this.descriptionField.Text,
-                this.orderDatePicker.Value,
-                this.deliveryDatePicker.Value,
-                int.Parse(this.quantityField.Text),
-                int.Parse(this.piecePriceField.Text),
-                this.customerField.Text,
-                int.Parse(this.customerNoField.Text),
-                int.Parse(this.customerOrderNoField.Text),
-                this.infoField.Text,
-                this.currencyField.Text,
-                this.recipientField.Text);
+            OrderMessage newOrder = new OrderMessage();
+            newOrder.Sender = this.senderField.Text;
+            newOrder.Recipient = this.recipientField.Text;
+            newOrder.ItemNumber = this.itemNumberField.Text;
+            newOrder.ItemDescription = this.itemDescriptionField.Text;
+            newOrder.OrderDate = this.orderDatePicker.Value;
+            newOrder.DeliveryDate = this.deliveryDatePicker.Value;
+            newOrder.Quantity = int.Parse(this.quantityField.Text);
+            newOrder.Price = int.Parse(this.priceField.Text);
+            newOrder.Currency = this.currencyField.Text;
+            newOrder.Text = this.textField.Text;
+            bool didItWork = insertClient.PutOrder(newOrder);
             if (didItWork)
             {
                 MessageBox.Show("Order was successfully added.");
@@ -71,6 +71,16 @@ namespace TestClient
             {
                 MessageBox.Show("Order was not added.");
             }
+        }
+
+        private void DescriptionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InsertForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

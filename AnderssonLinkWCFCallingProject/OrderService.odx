@@ -303,14 +303,14 @@
                         <om:Property Name="ClassName" Value="AnderssonLinkWCFCallingProject.Transform_1" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Transform_1" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessagePartRef" OID="0cdf8465-b04a-4696-9b51-b6b5a806e971" ParentLink="Transform_InputMessagePartRef" LowerBound="96.111" HigherBound="96.129">
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="3f1d2f4b-f6f7-47f8-931b-d500fa538aad" ParentLink="Transform_InputMessagePartRef" LowerBound="96.111" HigherBound="96.129">
                             <om:Property Name="MessageRef" Value="IncomingXMLMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="1524ce44-66d4-4e8e-82e8-47a2abd324ee" ParentLink="Transform_OutputMessagePartRef" LowerBound="96.28" HigherBound="96.63">
+                        <om:Element Type="MessagePartRef" OID="60caa3a8-608f-4b5f-9fef-b097b6625f6d" ParentLink="Transform_OutputMessagePartRef" LowerBound="96.28" HigherBound="96.63">
                             <om:Property Name="MessageRef" Value="InsertOrderViaWCFMessage" />
                             <om:Property Name="PartRef" Value="parameters" />
                             <om:Property Name="ReportToAnalyst" Value="True" />

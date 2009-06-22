@@ -16,6 +16,7 @@ namespace TestClient
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using TestClient.OrderServiceReference;
 
     /// <summary>
     /// Partial class holding methods for the main form MainForm.
@@ -45,10 +46,11 @@ namespace TestClient
             OrderServiceReference.OrderServiceClient myService = new TestClient.OrderServiceReference.OrderServiceClient();
             myService.ClientCredentials.UserName.UserName = "karl.bengtsson_gmail";
             myService.ClientCredentials.UserName.Password = "trustNo1";
-            DataSet orders = myService.GetOrders();
-            this.dataGridView1.DataSource = orders.Tables[0];
-            string xmlVersion = orders.GetXml();
-            this.textBox1.Text = xmlVersion;
+            OrderMessage[] Orders = myService.GetOrders();
+            foreach (OrderMessage order in Orders)
+            {
+                this.textBox1.Text += order.ItemDescription;
+            }
             myService.Close();
         }
 

@@ -1,4 +1,7 @@
-﻿SET ANSI_NULLS ON
+﻿USE [AnderssonLink]
+GO
+/****** Object:  StoredProcedure [dbo].[InsertOrder]    Script Date: 06/22/2009 21:59:55 ******/
+SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
@@ -7,20 +10,19 @@ GO
 -- Create date: 2009-03-12
 -- Description:	Procedure to insert a new order.
 -- =============================================
-CREATE PROCEDURE InsertOrder 
+ALTER PROCEDURE [dbo].[InsertOrder] 
 	-- Add the parameters for the stored procedure here
-	@ArticleNo int, 
-	@Description nvarchar(50),
+	@Sender nvarchar(50),
+	@Recipient nvarchar(50),
+	@ItemNumber nvarchar(50), 
+	@ItemDescription nvarchar(50),
 	@OrderDate date,
 	@DeliveryDate date,
 	@Quantity int,
-	@PiecePrice int,
-	@Customer nvarchar(50),
-	@CustomerNo int,
-	@CustomerOrderNo int,
-	@Info text,
+	@Price int,
 	@Currency nchar(3),
-	@Recipient nvarchar(50)
+	@Text text
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -30,32 +32,27 @@ BEGIN
     -- Insert statements for procedure here
     INSERT INTO dbo.Orders 
     (
-		ArticleNo,
-		Description,
+		Sender,
+		Recipient,
+		ItemNumber,
+		ItemDescription,
 		OrderDate,
 		DeliveryDate,
 		Quantity,
-		PiecePrice,
-		Customer,
-		CustomerNo,
-		CustomerOrderNo,
-		Info,
+		Price,
 		Currency,
-		Recipient) 
+		Text) 
     VALUES 
     (
-		@ArticleNo,
-		@Description,
+		@Sender,
+		@Recipient,
+		@ItemNumber,
+		@ItemDescription,
 		@OrderDate,
 		@DeliveryDate,
 		@Quantity,
-		@PiecePrice,
-		@Customer,
-		@CustomerNo,
-		@CustomerOrderNo,
-		@Info,
+		@Price,
 		@Currency,
-		@Recipient);
+		@Text);
 	RETURN @@ERROR
 END
-GO

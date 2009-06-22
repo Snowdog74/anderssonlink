@@ -17,14 +17,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="https://win-5btszfzq7gd.anderssonlink.local/OrderService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="0ef5f7c2-44d9-4d50-9218-279ea3bb63b8" SourceId="1" SourceUrl="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="832506ad-d549-497a-ba61-ed5f519d190e" SourceId="1" SourceUrl="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" />
-    <MetadataFile FileName="service31.xsd" MetadataType="Schema" ID="9ae6e0c0-8951-49f5-b652-0b5a3099c295" SourceId="1" SourceUrl="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" />
-    <MetadataFile FileName="service32.xsd" MetadataType="Schema" ID="770c073d-1ac0-4242-8b1e-34b73eb0071e" SourceId="1" SourceUrl="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" />
-    <MetadataFile FileName="AnderssonLink.xsd" MetadataType="Schema" ID="9aac1049-75e5-49b1-895a-fbb3aef77502" SourceId="1" SourceUrl="http://win-5btszfzq7gd.anderssonlink.local:8080/service/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e7c8dc91-fa79-40e9-82df-543fc3ca4c9e" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="7925effc-928d-4f3a-817d-0b215ca02124" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/mex" />
+    <MetadataFile FileName="service11.xsd" MetadataType="Schema" ID="4e548a8f-4361-4201-81c7-b5839f2f7ad2" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/mex" />
+    <MetadataFile FileName="AnderssonLink1.xsd" MetadataType="Schema" ID="60f8b95c-b0de-4ad7-ba4c-bfce0f4254ff" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -15,48 +15,45 @@ namespace TestClient.OrderServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsertOrderMessage", Namespace="http://schemas.datacontract.org/2004/07/AnderssonLink")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderMessage", Namespace="http://schemas.datacontract.org/2004/07/AnderssonLink")]
     [System.SerializableAttribute()]
-    public partial class InsertOrderMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class OrderMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int articleNoField;
+        private string CurrencyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string currencyField;
+        private System.DateTime DeliveryDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customerField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int customerNoField;
+        private string ItemDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int customerOrderNoField;
+        private string ItemNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime deliveryDateField;
+        private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string descriptionField;
+        private int PriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string infoField;
+        private int QuantityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime orderDateField;
+        private string RecipientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int piecePriceField;
+        private string SenderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int quantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string recipientField;
+        private string TextField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -69,157 +66,144 @@ namespace TestClient.OrderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int articleNo {
+        public string Currency {
             get {
-                return this.articleNoField;
+                return this.CurrencyField;
             }
             set {
-                if ((this.articleNoField.Equals(value) != true)) {
-                    this.articleNoField = value;
-                    this.RaisePropertyChanged("articleNo");
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string currency {
+        public System.DateTime DeliveryDate {
             get {
-                return this.currencyField;
+                return this.DeliveryDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.currencyField, value) != true)) {
-                    this.currencyField = value;
-                    this.RaisePropertyChanged("currency");
+                if ((this.DeliveryDateField.Equals(value) != true)) {
+                    this.DeliveryDateField = value;
+                    this.RaisePropertyChanged("DeliveryDate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customer {
+        public int Id {
             get {
-                return this.customerField;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.customerField, value) != true)) {
-                    this.customerField = value;
-                    this.RaisePropertyChanged("customer");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int customerNo {
+        public string ItemDescription {
             get {
-                return this.customerNoField;
+                return this.ItemDescriptionField;
             }
             set {
-                if ((this.customerNoField.Equals(value) != true)) {
-                    this.customerNoField = value;
-                    this.RaisePropertyChanged("customerNo");
+                if ((object.ReferenceEquals(this.ItemDescriptionField, value) != true)) {
+                    this.ItemDescriptionField = value;
+                    this.RaisePropertyChanged("ItemDescription");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int customerOrderNo {
+        public string ItemNumber {
             get {
-                return this.customerOrderNoField;
+                return this.ItemNumberField;
             }
             set {
-                if ((this.customerOrderNoField.Equals(value) != true)) {
-                    this.customerOrderNoField = value;
-                    this.RaisePropertyChanged("customerOrderNo");
+                if ((object.ReferenceEquals(this.ItemNumberField, value) != true)) {
+                    this.ItemNumberField = value;
+                    this.RaisePropertyChanged("ItemNumber");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime deliveryDate {
+        public System.DateTime OrderDate {
             get {
-                return this.deliveryDateField;
+                return this.OrderDateField;
             }
             set {
-                if ((this.deliveryDateField.Equals(value) != true)) {
-                    this.deliveryDateField = value;
-                    this.RaisePropertyChanged("deliveryDate");
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string description {
+        public int Price {
             get {
-                return this.descriptionField;
+                return this.PriceField;
             }
             set {
-                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
-                    this.descriptionField = value;
-                    this.RaisePropertyChanged("description");
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string info {
+        public int Quantity {
             get {
-                return this.infoField;
+                return this.QuantityField;
             }
             set {
-                if ((object.ReferenceEquals(this.infoField, value) != true)) {
-                    this.infoField = value;
-                    this.RaisePropertyChanged("info");
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime orderDate {
+        public string Recipient {
             get {
-                return this.orderDateField;
+                return this.RecipientField;
             }
             set {
-                if ((this.orderDateField.Equals(value) != true)) {
-                    this.orderDateField = value;
-                    this.RaisePropertyChanged("orderDate");
+                if ((object.ReferenceEquals(this.RecipientField, value) != true)) {
+                    this.RecipientField = value;
+                    this.RaisePropertyChanged("Recipient");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int piecePrice {
+        public string Sender {
             get {
-                return this.piecePriceField;
+                return this.SenderField;
             }
             set {
-                if ((this.piecePriceField.Equals(value) != true)) {
-                    this.piecePriceField = value;
-                    this.RaisePropertyChanged("piecePrice");
+                if ((object.ReferenceEquals(this.SenderField, value) != true)) {
+                    this.SenderField = value;
+                    this.RaisePropertyChanged("Sender");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int quantity {
+        public string Text {
             get {
-                return this.quantityField;
+                return this.TextField;
             }
             set {
-                if ((this.quantityField.Equals(value) != true)) {
-                    this.quantityField = value;
-                    this.RaisePropertyChanged("quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string recipient {
-            get {
-                return this.recipientField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.recipientField, value) != true)) {
-                    this.recipientField = value;
-                    this.RaisePropertyChanged("recipient");
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
                 }
             }
         }
@@ -239,16 +223,13 @@ namespace TestClient.OrderServiceReference {
     public interface IOrderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrders", ReplyAction="http://tempuri.org/IOrderService/GetOrdersResponse")]
-        System.Data.DataSet GetOrders();
+        TestClient.OrderServiceReference.OrderMessage[] GetOrders();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         bool DeleteOrder(int orderId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/InsertOrder", ReplyAction="http://tempuri.org/IOrderService/InsertOrderResponse")]
-        bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/InsertOrderByObject", ReplyAction="http://tempuri.org/IOrderService/InsertOrderByObjectResponse")]
-        bool InsertOrderByObject(TestClient.OrderServiceReference.InsertOrderMessage message);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/PutOrder", ReplyAction="http://tempuri.org/IOrderService/PutOrderResponse")]
+        bool PutOrder(TestClient.OrderServiceReference.OrderMessage newOrder);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]
@@ -278,7 +259,7 @@ namespace TestClient.OrderServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataSet GetOrders() {
+        public TestClient.OrderServiceReference.OrderMessage[] GetOrders() {
             return base.Channel.GetOrders();
         }
         
@@ -286,12 +267,8 @@ namespace TestClient.OrderServiceReference {
             return base.Channel.DeleteOrder(orderId);
         }
         
-        public bool InsertOrder(int articleNo, string description, System.DateTime orderDate, System.DateTime deliveryDate, int quantity, int piecePrice, string customer, int customerNo, int customerOrderNo, string info, string currency, string recipient) {
-            return base.Channel.InsertOrder(articleNo, description, orderDate, deliveryDate, quantity, piecePrice, customer, customerNo, customerOrderNo, info, currency, recipient);
-        }
-        
-        public bool InsertOrderByObject(TestClient.OrderServiceReference.InsertOrderMessage message) {
-            return base.Channel.InsertOrderByObject(message);
+        public bool PutOrder(TestClient.OrderServiceReference.OrderMessage newOrder) {
+            return base.Channel.PutOrder(newOrder);
         }
     }
 }
