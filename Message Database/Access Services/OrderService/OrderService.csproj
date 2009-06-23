@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IOrderService.cs" />
-    <Compile Include="Messages\OrderMessage.cs" />
+    <Compile Include="OrderMessage.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

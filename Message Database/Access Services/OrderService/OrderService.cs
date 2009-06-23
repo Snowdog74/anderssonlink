@@ -102,7 +102,7 @@ namespace AnderssonLink.MessageDatabase.AccessServices.OrderService
                 string userName = Thread.CurrentPrincipal.Identity.Name.Split('\\')[1];
 
                 // Logga begäran
-                eventLog.LogInfo(String.Format("User: {} is executing DeleteOrder({1})", userName, orderId));
+                eventLog.LogInfo(String.Format("User: {0} is executing DeleteOrder({1})", userName, orderId));
 
                 // Generera SQL-query
                 SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");

@@ -79,10 +79,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\OrderServiceReference\AnderssonLink.MessageDatabase.AccessServices.OrderService.xsd" />
-    <None Include="Service References\OrderServiceReference\service.wsdl" />
-    <None Include="Service References\OrderServiceReference\service.xsd" />
-    <None Include="Service References\OrderServiceReference\service1.xsd" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -107,6 +103,8 @@
     <None Include="Service References\OrderServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\OrderServiceReference\Default.xsd" />
+    <None Include="Service References\OrderServiceReference\OrderService.wsdl" />
     <None Include="Service References\OrderServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -114,6 +112,11 @@
     <None Include="Service References\OrderServiceReference\ServiceTesterClient.OrderServiceReference.OrderMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrderServiceReference\Default.disco" />
+    <None Include="Service References\OrderServiceReference\Default1.xsd" />
+    <None Include="Service References\OrderServiceReference\Default2.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
