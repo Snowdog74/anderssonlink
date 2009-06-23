@@ -1,0 +1,11 @@
+<publishData>
+  <publishTarget publishUrl="C:\AnderssonLink\OrderService\">
+    <file relUrl="bin/OrderService.dll" publishTime="06/23/2009 11:56:15" />
+    <file relUrl="bin/OrderService.dll.config" publishTime="06/23/2009 11:58:53" />
+    <file relUrl="bin/BitFactory.Logging.dll" publishTime="06/22/2009 20:42:52" />
+    <file relUrl="bin/OrderService.pdb" publishTime="06/23/2009 11:56:15" />
+    <file relUrl="AnderssonLink.MessageDatabase.AccessServices.OrderService.OrderService.svc" publishTime="06/23/2009 13:11:10" />
+    <file relUrl="Dependencies/BitFactory.Logging.dll" publishTime="06/22/2009 20:42:52" />
+    <file relUrl="Web.config" publishTime="06/23/2009 11:58:53" />
+  </publishTarget>
+</publishData>
