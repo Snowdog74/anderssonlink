@@ -176,6 +176,9 @@ namespace AnderssonLink.MessageDatabase.AccessServices.OrderService
                 // Logga begäran
                 eventLog.LogInfo(String.Format("User: {0} is executing PutOrder()", userName));
 
+                // Logga objektet (diagnostiskt)
+                eventLog.LogInfo(String.Format("newOrder object: {0}", newOrder.ToString()));
+
                 // Instantiera databasklasser och kommandon
                 SqlConnection databaseConnection = new SqlConnection("Server=localhost;database=AnderssonLink;Integrated Security=True");
                 SqlCommand insertCommand = new SqlCommand("dbo.InsertOrder", databaseConnection);

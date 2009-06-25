@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9e0fe84f-545c-460e-ad1b-a9ec97400b84" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="eea00b28-6dc9-4006-8038-6204f675286f" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?wsdl" />
+    <MetadataFile FileName="Default.xsd" MetadataType="Schema" ID="c1abfcfb-7a3f-4162-b58c-3061eede2155" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?xsd=xsd0" />
+    <MetadataFile FileName="Default.disco" MetadataType="Disco" ID="c9205a8c-19a4-4036-bb97-100b3685c4d5" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?disco" />
+    <MetadataFile FileName="Default1.xsd" MetadataType="Schema" ID="f284e993-c980-4922-ab53-6d617a5fb533" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?xsd=xsd2" />
+    <MetadataFile FileName="Default2.xsd" MetadataType="Schema" ID="9a1dd252-a45c-4768-9884-454132c4cde4" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
