@@ -254,14 +254,14 @@
                         <om:Property Name="ClassName" Value="ORDERS_Message.Transform_1" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="EDIFACT_ORDERS to OrderService Input" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="45d29394-734a-4999-96e3-1a92822c967d" ParentLink="Transform_InputMessagePartRef" LowerBound="77.95" HigherBound="77.109">
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="2d7fedf0-f5ae-47dc-85be-f6907761b215" ParentLink="Transform_InputMessagePartRef" LowerBound="77.95" HigherBound="77.109">
                             <om:Property Name="MessageRef" Value="EDIFACT_ORDERS" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="862779bc-1d69-4a7b-8791-86b5aa694efb" ParentLink="Transform_OutputMessagePartRef" LowerBound="77.28" HigherBound="77.63">
+                        <om:Element Type="MessagePartRef" OID="3bf2915b-0fe3-4c57-b0e4-04edf3f46dde" ParentLink="Transform_OutputMessagePartRef" LowerBound="77.28" HigherBound="77.63">
                             <om:Property Name="MessageRef" Value="OrderServiceInputMessage" />
                             <om:Property Name="PartRef" Value="parameters" />
                             <om:Property Name="ReportToAnalyst" Value="True" />

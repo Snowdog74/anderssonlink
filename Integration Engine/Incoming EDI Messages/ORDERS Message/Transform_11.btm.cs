@@ -18,8 +18,9 @@ namespace ORDERS_Message {
           <xsl:variable name=""var:v1"" select=""userCSharp:DateCurrentDateTime()"" />
           <xsl:variable name=""var:v2"" select=""userCSharp:StringConcat(string(../s0:IMD_2/s0:C273_2/C27304/text()) , &quot;:&quot; , string(../s0:IMD_2/s0:C273_2/C27305/text()))"" />
           <xsl:variable name=""var:v3"" select=""userCSharp:StringConcat(string(../s0:LIN/s0:C212/C21201/text()) , &quot;:&quot; , string(../s0:LIN/s0:C212/C21202/text()))"" />
-          <xsl:variable name=""var:v4"" select=""userCSharp:StringConcat(&quot;TEST&quot;)"" />
-          <xsl:variable name=""var:v5"" select=""userCSharp:StringConcat(string(../s0:FTX_5/FTX01/text()) , &quot;:&quot; , string(../s0:FTX_5/s0:C108_5/C10801/text()) , string(../s0:FTX_5/s0:C108_5/C10802/text()) , string(../s0:FTX_5/s0:C108_5/C10803/text()) , string(../s0:FTX_5/s0:C108_5/C10804/text()) , string(../s0:FTX_5/s0:C108_5/C10805/text()))"" />
+          <xsl:variable name=""var:v4"" select=""userCSharp:StringConcat(&quot;karl.bengtsson_gmail&quot;)"" />
+          <xsl:variable name=""var:v5"" select=""userCSharp:StringConcat(&quot;ODETTE:VOLVOPV&quot;)"" />
+          <xsl:variable name=""var:v6"" select=""userCSharp:StringConcat(string(../s0:FTX_5/FTX01/text()) , &quot;:&quot; , string(../s0:FTX_5/s0:C108_5/C10801/text()) , string(../s0:FTX_5/s0:C108_5/C10802/text()) , string(../s0:FTX_5/s0:C108_5/C10803/text()) , string(../s0:FTX_5/s0:C108_5/C10804/text()) , string(../s0:FTX_5/s0:C108_5/C10805/text()))"" />
           <ns0:newOrder>
             <xsl:if test=""s0:C516_5/C51603"">
               <ns1:Currency>
@@ -50,10 +51,10 @@ namespace ORDERS_Message {
               <xsl:value-of select=""$var:v4"" />
             </ns1:Recipient>
             <ns1:Sender>
-              <xsl:value-of select=""$var:v4"" />
+              <xsl:value-of select=""$var:v5"" />
             </ns1:Sender>
             <ns1:Text>
-              <xsl:value-of select=""$var:v5"" />
+              <xsl:value-of select=""$var:v6"" />
             </ns1:Text>
           </ns0:newOrder>
         </xsl:for-each>

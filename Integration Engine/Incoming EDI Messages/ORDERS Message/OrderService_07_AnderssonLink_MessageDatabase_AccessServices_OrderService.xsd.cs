@@ -23,7 +23,7 @@ namespace ORDERS_Message {
     <xs:sequence>
       <xs:element minOccurs=""0"" name=""Currency"" nillable=""true"" type=""xs:string"" />
       <xs:element minOccurs=""0"" name=""DeliveryDate"" type=""xs:dateTime"" />
-      <xs:element minOccurs=""0"" name=""Id"" type=""xs:int"" />
+      <xs:element minOccurs=""0"" name=""Id"" nillable=""true"" type=""xs:int"" />
       <xs:element minOccurs=""0"" name=""ItemDescription"" nillable=""true"" type=""xs:string"" />
       <xs:element minOccurs=""0"" name=""ItemNumber"" nillable=""true"" type=""xs:string"" />
       <xs:element minOccurs=""0"" name=""OrderDate"" type=""xs:dateTime"" />

@@ -167,6 +167,9 @@
       <Namespace>ORDERS_Message</Namespace>
     </Map>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test messages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
 </Project>
