@@ -17,7 +17,7 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://win-5btszfzq7gd.anderssonlink.local/OrderService/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="df14e48f-c150-42cf-874d-5d46f5223266" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/OrderService/Default.svc?wsdl" />
