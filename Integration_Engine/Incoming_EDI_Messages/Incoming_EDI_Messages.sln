@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORDERS Message", "ORDERS Message\ORDERS Message.btproj", "{707F98BC-4EA7-488D-AAF5-F06A8408EC08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORDERS_Message", "ORDERS_Message\ORDERS_Message.btproj", "{707F98BC-4EA7-488D-AAF5-F06A8408EC08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
