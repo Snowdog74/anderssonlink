@@ -10,8 +10,8 @@
             <om:Property Name="Synchronous" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="PortType_2" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="Outgoing_EDI_INVOIC_porttype" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="c304c48c-1bfe-40ac-ba18-e5ac4c0c3ded" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
                 <om:Property Name="OperationType" Value="OneWay" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -27,10 +27,10 @@
         </om:Element>
         <om:Element Type="PortType" OID="3a1d9821-37ac-423f-856d-428a21deab1a" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
             <om:Property Name="Synchronous" Value="False" />
-            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="TypeModifier" Value="Public" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="PortType_3" />
-            <om:Property Name="Signal" Value="False" />
+            <om:Property Name="Name" Value="Incoming_INVOC_PortType" />
+            <om:Property Name="Signal" Value="True" />
             <om:Element Type="OperationDeclaration" OID="89f72ce5-a20a-418a-a15d-d0ed306c4a95" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
                 <om:Property Name="OperationType" Value="OneWay" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -108,7 +108,7 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INVOIC_Message.PortType_3" />
+                <om:Property Name="Type" Value="INVOIC_Message.Incoming_INVOC_PortType" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="IncomingINVOICPort" />
@@ -124,7 +124,7 @@
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INVOIC_Message.PortType_2" />
+                <om:Property Name="Type" Value="INVOIC_Message.Outgoing_EDI_INVOIC_porttype" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Outgoing_EDI_INVOIC_port" />
@@ -154,14 +154,14 @@
 [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
 module INVOIC_Message
 {
-    internal porttype PortType_2
+    internal porttype Outgoing_EDI_INVOIC_porttype
     {
         oneway Operation_1
         {
             EFACT_D93A_INVOIC
         };
     };
-    internal porttype PortType_3
+    public porttype Incoming_INVOC_PortType
     {
         oneway Operation_1
         {
@@ -172,9 +172,9 @@ module INVOIC_Message
     internal service INVOIC_transform
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port implements PortType_3 IncomingINVOICPort;
+        port implements Incoming_INVOC_PortType IncomingINVOICPort;
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port uses PortType_2 Outgoing_EDI_INVOIC_port;
+        port uses Outgoing_EDI_INVOIC_porttype Outgoing_EDI_INVOIC_port;
         message SendINVOICParameters IncomingINVOICMessage;
         message EFACT_D93A_INVOIC Outgoing_EDI_INVOIC;
         body ()
