@@ -84,6 +84,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service References\InvoiceServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\OrderServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +99,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\InvoiceServiceReference\" />
     <WCFMetadataStorage Include="Service References\OrderServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +123,28 @@
     <None Include="Service References\OrderServiceReference\Default.disco" />
     <None Include="Service References\OrderServiceReference\Default1.xsd" />
     <None Include="Service References\OrderServiceReference\Default2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoiceServiceReference\BizTalkServiceInstance.wsdl" />
+    <None Include="Service References\InvoiceServiceReference\Default.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoiceServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoiceServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.ServiceModel.Channels.Message.datasource" />
+    <None Include="Service References\InvoiceServiceReference\Default1.xsd" />
+    <None Include="Service References\InvoiceServiceReference\Default11.xsd" />
+    <None Include="Service References\InvoiceServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\InvoiceServiceReference\ServiceTesterClient.InvoiceServiceReference.InvoiceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

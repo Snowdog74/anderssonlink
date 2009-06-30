@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ServiceTesterClient.OrderServiceReference;
+using ServiceTesterClient.InvoiceServiceReference;
 
 namespace ServiceTesterClient
 {
@@ -71,6 +72,30 @@ namespace ServiceTesterClient
                     orderMessage.ItemDescription);
                 this.responseTextBox.Text += orderString;
             }
+        }
+
+        private void sendInvoiceButton_Click(object sender, EventArgs e)
+        {
+            INVOICMessage invoice = new INVOICMessage();
+            invoice.Sender = invoiceSender.Text.ToUpper();
+            invoice.Recipient = invoiceRecipient.Text.ToUpper();
+            invoice.InvoiceNumber = invoiceNumber.Text.ToUpper();
+            invoice.ItemDescription = invoiceItemDescription.Text.ToUpper();
+            invoice.DueDate = invoiceDueDate.Value.ToString("yyMMdd");
+            invoice.Reference = invoiceReference.Text.ToUpper();
+            invoice.Amount = invoiceAmount.Text.ToUpper();
+            invoice.Currency = invoiceCurrency.Text.ToUpper();
+            INVOICMessageAdress adress = new INVOICMessageAdress();
+            adress.Street = invoiceStreet.Text.ToUpper();
+            adress.City = invoiceCity.Text.ToUpper();
+            adress.Zipcode = invoiceZipcode.Text.ToUpper();
+            adress.Country = invoiceCountry.Text.ToUpper();
+            invoice.Adress = adress;
+            DefaultClient proxy = new DefaultClient();
+            proxy.ClientCredentials.UserName.UserName = "karl.bengtsson_gmail";
+            proxy.ClientCredentials.UserName.Password = "trustNo1";
+            InvoiceResult result = proxy.Operation_1(invoice);
+            MessageBox.Show(result.Result);
         }
     }
 }
