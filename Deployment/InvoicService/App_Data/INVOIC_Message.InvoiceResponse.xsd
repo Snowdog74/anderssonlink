@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:ns0="https://INVOIC_Message.PropertySchema" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://INVOIC_Message.InvoiceResponse" targetNamespace="http://INVOIC_Message.InvoiceResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo />
+  </xs:annotation>
+  <xs:element name="InvoiceResult">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Result" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

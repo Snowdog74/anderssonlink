@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cf82ef99-7939-45b8-8442-cedae5010637" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://win-5btszfzq7gd.anderssonlink.local/InvoicService/Default.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Default.disco" MetadataType="Disco" ID="75f8e412-541d-48ba-8efb-40166a4a45a4" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/InvoicService/Default.svc?disco" />
+    <MetadataFile FileName="Default1.xsd" MetadataType="Schema" ID="c517d5a8-95c2-47e3-9d01-4c9a9ed1f99a" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/InvoicService/Default.svc?xsd=xsd3" />
+    <MetadataFile FileName="Default11.xsd" MetadataType="Schema" ID="88d69f9b-65ae-4d08-a35c-bc102de89182" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/InvoicService/Default.svc?xsd=xsd2" />
+    <MetadataFile FileName="BizTalkServiceInstance.wsdl" MetadataType="Wsdl" ID="0d36f439-dd82-4a9c-86be-9baea180c0a6" SourceId="1" SourceUrl="https://win-5btszfzq7gd.anderssonlink.local/InvoicService/Default.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -75,6 +75,18 @@
     </XLang>
   </ItemGroup>
   <ItemGroup>
+    <Schema Include="InvoiceResponse.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>InvoiceResponse</TypeName>
+      <Namespace>INVOIC_Message</Namespace>
+    </Schema>
+    <Schema Include="PropertySchema.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>INVOIC_Message.PropertySchema</Namespace>
+    </Schema>
     <None Include="PublicPrivateKeyFile.snk" />
     <Schema Include="SendINVOICParameters.xsd">
       <SubType>

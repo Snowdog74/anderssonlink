@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://INVOIC_Message.SendINVOICParameters" targetNamespace="http://INVOIC_Message.SendINVOICParameters" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="INVOICMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Sender" type="xs:string" />
+        <xs:element name="Recipient" type="xs:string" />
+        <xs:element name="InvoiceNumber" type="xs:string" />
+        <xs:element name="DueDate" type="xs:string" />
+        <xs:element name="Reference" type="xs:string" />
+        <xs:element name="Adress">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Street" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="Zipcode" type="xs:string" />
+              <xs:element name="Country" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ItemDescription" type="xs:string" />
+        <xs:element name="Amount" type="xs:integer" />
+        <xs:element name="Currency" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="b3ad4052-cc66-4f09-bd9b-0fa1d770e9fb" LowerBound="1.1" HigherBound="42.1">
+    <om:Element Type="Module" OID="b3ad4052-cc66-4f09-bd9b-0fa1d770e9fb" LowerBound="1.1" HigherBound="52.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="INVOIC_Message" />
         <om:Property Name="Signal" Value="False" />
@@ -25,99 +25,136 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="PortType" OID="3a1d9821-37ac-423f-856d-428a21deab1a" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
-            <om:Property Name="Synchronous" Value="False" />
+        <om:Element Type="PortType" OID="778cb20b-60fd-408a-b681-5a69738d3057" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
             <om:Property Name="TypeModifier" Value="Public" />
             <om:Property Name="ReportToAnalyst" Value="True" />
-            <om:Property Name="Name" Value="Incoming_INVOC_PortType" />
-            <om:Property Name="Signal" Value="True" />
-            <om:Element Type="OperationDeclaration" OID="89f72ce5-a20a-418a-a15d-d0ed306c4a95" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
-                <om:Property Name="OperationType" Value="OneWay" />
+            <om:Property Name="Name" Value="RPT_Invoice" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="81a8c3a8-354d-463c-95ea-d332306ce888" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Operation_1" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="MessageRef" OID="d2875819-2996-4409-a430-ea36bb82dde9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.33">
+                <om:Element Type="MessageRef" OID="f81764f0-fc27-4885-a35f-83ca5f617f12" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.33">
                     <om:Property Name="Ref" Value="INVOIC_Message.SendINVOICParameters" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Request" />
-                    <om:Property Name="Signal" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="56b8a40b-cd2e-44c7-a7bf-e077c2b05647" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.35" HigherBound="15.50">
+                    <om:Property Name="Ref" Value="INVOIC_Message.InvoiceResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="a162e8d5-fe88-4eab-9dd4-32660b6a0c07" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+        <om:Element Type="ServiceDeclaration" OID="a162e8d5-fe88-4eab-9dd4-32660b6a0c07" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="51.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
             <om:Property Name="ReportToAnalyst" Value="True" />
             <om:Property Name="Name" Value="INVOIC_transform" />
             <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="ffd58092-20ef-4bfc-b8cf-e3c1f19d87f6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="INVOIC_Message.SendINVOICParameters" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RP_Invoice_In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4ef1a738-6e55-47ae-9ca3-ecd81bd92f68" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="INVOIC_Message.EFACT_D93A_INVOIC" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EDI_Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="07cf39f9-8d8d-44d4-bac2-cf339bbcb66e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="INVOIC_Message.InvoiceResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RP_Invoice_Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
             <om:Element Type="ServiceBody" OID="27e7528c-79b0-4161-a118-970e38e67eea" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="Receive" OID="a6c474a1-f256-4d03-b993-b14566d00e92" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                <om:Element Type="Receive" OID="a6c474a1-f256-4d03-b993-b14566d00e92" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
                     <om:Property Name="Activate" Value="True" />
-                    <om:Property Name="PortName" Value="IncomingINVOICPort" />
-                    <om:Property Name="MessageName" Value="IncomingINVOICMessage" />
+                    <om:Property Name="PortName" Value="RP_Invoice" />
+                    <om:Property Name="MessageName" Value="RP_Invoice_In" />
                     <om:Property Name="OperationName" Value="Operation_1" />
                     <om:Property Name="OperationMessageName" Value="Request" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Construct" OID="52b150a3-640f-4ee4-a5c1-5573b33953fb" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                <om:Element Type="Construct" OID="52b150a3-640f-4ee4-a5c1-5573b33953fb" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="38.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ConstructMessage_1" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Transform" OID="e8084154-96e6-4dc5-853f-d33e3985df62" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                    <om:Element Type="Transform" OID="e8084154-96e6-4dc5-853f-d33e3985df62" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="37.1">
                         <om:Property Name="ClassName" Value="INVOIC_Message.Transform_11" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="Transform_1" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessagePartRef" OID="16e313f0-5d86-40a5-91d5-5153b546c2ff" ParentLink="Transform_InputMessagePartRef" LowerBound="35.80" HigherBound="35.101">
-                            <om:Property Name="MessageRef" Value="IncomingINVOICMessage" />
+                        <om:Element Type="MessagePartRef" OID="16e313f0-5d86-40a5-91d5-5153b546c2ff" ParentLink="Transform_InputMessagePartRef" LowerBound="36.68" HigherBound="36.81">
+                            <om:Property Name="MessageRef" Value="RP_Invoice_In" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="3a784a10-ef55-425d-b007-113605e2f95f" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.47">
-                            <om:Property Name="MessageRef" Value="Outgoing_EDI_INVOIC" />
+                        <om:Element Type="MessagePartRef" OID="3a784a10-ef55-425d-b007-113605e2f95f" ParentLink="Transform_OutputMessagePartRef" LowerBound="36.28" HigherBound="36.35">
+                            <om:Property Name="MessageRef" Value="EDI_Out" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_2" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="MessageRef" OID="dd8109ea-0706-411b-9b59-344f0e63c00b" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.42">
-                        <om:Property Name="Ref" Value="Outgoing_EDI_INVOIC" />
+                    <om:Element Type="MessageRef" OID="dd8109ea-0706-411b-9b59-344f0e63c00b" ParentLink="Construct_MessageRef" LowerBound="33.23" HigherBound="33.30">
+                        <om:Property Name="Ref" Value="EDI_Out" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="8c333b99-462f-4030-9471-8c86011ef877" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                <om:Element Type="Send" OID="8c333b99-462f-4030-9471-8c86011ef877" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="40.1">
                     <om:Property Name="PortName" Value="Outgoing_EDI_INVOIC_port" />
-                    <om:Property Name="MessageName" Value="Outgoing_EDI_INVOIC" />
+                    <om:Property Name="MessageName" Value="EDI_Out" />
                     <om:Property Name="OperationName" Value="Operation_1" />
                     <om:Property Name="OperationMessageName" Value="Request" />
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="Send_1" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-            </om:Element>
-            <om:Element Type="PortDeclaration" OID="134661d9-fb70-418d-bc2f-18acfa5b459f" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
-                <om:Property Name="PortModifier" Value="Implements" />
-                <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="-1" />
-                <om:Property Name="IsWebPort" Value="False" />
-                <om:Property Name="OrderedDelivery" Value="False" />
-                <om:Property Name="DeliveryNotification" Value="None" />
-                <om:Property Name="Type" Value="INVOIC_Message.Incoming_INVOC_PortType" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="IncomingINVOICPort" />
-                <om:Property Name="Signal" Value="True" />
-                <om:Element Type="LogicalBindingAttribute" OID="5d077bfb-529a-40da-a7ed-6bf5cd55daca" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
-                    <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Construct" OID="37300c23-e194-404c-8cbc-1386a11cb34f" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="47.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="AnalystComments" Value="Bugger" />
+                    <om:Property Name="Name" Value="ConstructMessage_2" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="682a4a39-cbd5-4a89-a34b-fa9567afa3e1" ParentLink="ComplexStatement_Statement" LowerBound="43.1" HigherBound="46.1">
+                        <om:Property Name="Expression" Value="RP_Invoice_Out = new System.Xml.XmlDocument(); &#xD;&#xA;RP_Invoice_Out.Result = &quot;Hello world!&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="ea280d23-cb7d-406a-9b9c-e76211866057" ParentLink="Construct_MessageRef" LowerBound="41.23" HigherBound="41.37">
+                        <om:Property Name="Ref" Value="RP_Invoice_Out" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="557a58c9-7eb8-49fd-8c93-f915763d89c5" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="49.1">
+                    <om:Property Name="PortName" Value="RP_Invoice" />
+                    <om:Property Name="MessageName" Value="RP_Invoice_Out" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_2" />
+                    <om:Property Name="Signal" Value="True" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="PortDeclaration" OID="724f1605-52fc-4834-a705-1095c6ed54d4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+            <om:Element Type="PortDeclaration" OID="724f1605-52fc-4834-a705-1095c6ed54d4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Left" />
                 <om:Property Name="PortIndex" Value="-1" />
@@ -129,23 +166,25 @@
                 <om:Property Name="ReportToAnalyst" Value="True" />
                 <om:Property Name="Name" Value="Outgoing_EDI_INVOIC_port" />
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="LogicalBindingAttribute" OID="ffab6744-761b-4e78-a336-cc00013e1b75" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                <om:Element Type="LogicalBindingAttribute" OID="ffab6744-761b-4e78-a336-cc00013e1b75" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
                     <om:Property Name="Signal" Value="False" />
                 </om:Element>
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="ffd58092-20ef-4bfc-b8cf-e3c1f19d87f6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
-                <om:Property Name="Type" Value="INVOIC_Message.SendINVOICParameters" />
+            <om:Element Type="PortDeclaration" OID="184df2fa-a18e-4c4c-9407-11eb22eae75d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="INVOIC_Message.RPT_Invoice" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="IncomingINVOICMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="4ef1a738-6e55-47ae-9ca3-ecd81bd92f68" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
-                <om:Property Name="Type" Value="INVOIC_Message.EFACT_D93A_INVOIC" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="Outgoing_EDI_INVOIC" />
-                <om:Property Name="Signal" Value="True" />
+                <om:Property Name="Name" Value="RP_Invoice" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="220939b1-7e3e-437a-9291-722baa4924b8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
             </om:Element>
         </om:Element>
     </om:Element>
@@ -161,34 +200,44 @@ module INVOIC_Message
             EFACT_D93A_INVOIC
         };
     };
-    public porttype Incoming_INVOC_PortType
+    public porttype RPT_Invoice
     {
-        oneway Operation_1
+        requestresponse Operation_1
         {
-            SendINVOICParameters
+            SendINVOICParameters, InvoiceResponse
         };
     };
     [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
     internal service INVOIC_transform
     {
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
-        port implements Incoming_INVOC_PortType IncomingINVOICPort;
-        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses Outgoing_EDI_INVOIC_porttype Outgoing_EDI_INVOIC_port;
-        message SendINVOICParameters IncomingINVOICMessage;
-        message EFACT_D93A_INVOIC Outgoing_EDI_INVOIC;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements RPT_Invoice RP_Invoice;
+        message SendINVOICParameters RP_Invoice_In;
+        message EFACT_D93A_INVOIC EDI_Out;
+        message InvoiceResponse RP_Invoice_Out;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6c474a1-f256-4d03-b993-b14566d00e92")]
-            activate receive (IncomingINVOICPort.Operation_1, IncomingINVOICMessage);
+            activate receive (RP_Invoice.Operation_1, RP_Invoice_In);
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("52b150a3-640f-4ee4-a5c1-5573b33953fb")]
-            construct Outgoing_EDI_INVOIC
+            construct EDI_Out
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("e8084154-96e6-4dc5-853f-d33e3985df62")]
-                transform (Outgoing_EDI_INVOIC) = INVOIC_Message.Transform_11 (IncomingINVOICMessage);
+                transform (EDI_Out) = INVOIC_Message.Transform_11 (RP_Invoice_In);
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c333b99-462f-4030-9471-8c86011ef877")]
-            send (Outgoing_EDI_INVOIC_port.Operation_1, Outgoing_EDI_INVOIC);
+            send (Outgoing_EDI_INVOIC_port.Operation_1, EDI_Out);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("37300c23-e194-404c-8cbc-1386a11cb34f")]
+            construct RP_Invoice_Out
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("682a4a39-cbd5-4a89-a34b-fa9567afa3e1")]
+                RP_Invoice_Out = new System.Xml.XmlDocument(); 
+                RP_Invoice_Out.Result = "Hello world!";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("557a58c9-7eb8-49fd-8c93-f915763d89c5")]
+            send (RP_Invoice.Operation_1, RP_Invoice_Out);
         }
     }
 }
