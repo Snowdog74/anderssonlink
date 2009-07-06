@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="f02fbfea-1e6b-46f8-8e77-1208aa9ef215" LowerBound="1.1" HigherBound="88.1">
+    <om:Element Type="Module" OID="f02fbfea-1e6b-46f8-8e77-1208aa9ef215" LowerBound="1.1" HigherBound="91.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="ORDERS_Message" />
         <om:Property Name="Signal" Value="False" />
@@ -205,7 +205,7 @@
                 <om:Property Name="Signal" Value="False" />
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="7f17fd5b-75b5-4f01-88e1-9f6f5055138a" ParentLink="Module_ServiceDeclaration" LowerBound="57.1" HigherBound="87.1">
+        <om:Element Type="ServiceDeclaration" OID="7f17fd5b-75b5-4f01-88e1-9f6f5055138a" ParentLink="Module_ServiceDeclaration" LowerBound="57.1" HigherBound="90.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -246,7 +246,7 @@
                     <om:Property Name="Name" Value="Receive_1" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Construct" OID="cd801382-ec88-4ab0-b3a8-5cf39f1dffc9" ParentLink="ServiceBody_Statement" LowerBound="73.1" HigherBound="79.1">
+                <om:Element Type="Construct" OID="cd801382-ec88-4ab0-b3a8-5cf39f1dffc9" ParentLink="ServiceBody_Statement" LowerBound="73.1" HigherBound="82.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ConstructMessage_1" />
                     <om:Property Name="Signal" Value="True" />
@@ -269,13 +269,19 @@
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
+                    <om:Element Type="MessageAssignment" OID="03602374-d8e3-4d46-b3c6-72c027d1042f" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="81.1">
+                        <om:Property Name="Expression" Value="OrderServiceInputMessage.parameters.newOrder.Recipient = EDIFACT_ORDERS(EDI.Unb31) + &quot;:&quot; + EDIFACT_ORDERS(EDI.UNB3_2);&#xD;&#xA;OrderServiceInputMessage.parameters.newOrder.Sender = EDIFACT_ORDERS(EDI.Unb21) + &quot;:&quot; + EDIFACT_ORDERS(EDI.UNB2_2);" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
                     <om:Element Type="MessageRef" OID="dc617450-4de8-4b1f-8485-ce607c5f77f2" ParentLink="Construct_MessageRef" LowerBound="74.23" HigherBound="74.47">
                         <om:Property Name="Ref" Value="OrderServiceInputMessage" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="84c2452f-27bc-4ef2-805f-db23522bcd2c" ParentLink="ServiceBody_Statement" LowerBound="79.1" HigherBound="81.1">
+                <om:Element Type="Send" OID="84c2452f-27bc-4ef2-805f-db23522bcd2c" ParentLink="ServiceBody_Statement" LowerBound="82.1" HigherBound="84.1">
                     <om:Property Name="PortName" Value="OrderServicePort" />
                     <om:Property Name="MessageName" Value="OrderServiceInputMessage" />
                     <om:Property Name="OperationName" Value="PutOrder" />
@@ -284,7 +290,7 @@
                     <om:Property Name="Name" Value="Send_1" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Receive" OID="e7a8b660-c69b-4d07-9395-4f941e822fdd" ParentLink="ServiceBody_Statement" LowerBound="81.1" HigherBound="83.1">
+                <om:Element Type="Receive" OID="e7a8b660-c69b-4d07-9395-4f941e822fdd" ParentLink="ServiceBody_Statement" LowerBound="84.1" HigherBound="86.1">
                     <om:Property Name="Activate" Value="False" />
                     <om:Property Name="PortName" Value="OrderServicePort" />
                     <om:Property Name="MessageName" Value="OrderServiceOutputMessage" />
@@ -294,7 +300,7 @@
                     <om:Property Name="Name" Value="Receive_2" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Send" OID="fe21cdbd-1260-424f-b849-12467eb63354" ParentLink="ServiceBody_Statement" LowerBound="83.1" HigherBound="85.1">
+                <om:Element Type="Send" OID="fe21cdbd-1260-424f-b849-12467eb63354" ParentLink="ServiceBody_Statement" LowerBound="86.1" HigherBound="88.1">
                     <om:Property Name="PortName" Value="LoggingPort" />
                     <om:Property Name="MessageName" Value="OrderServiceOutputMessage" />
                     <om:Property Name="OperationName" Value="Operation_1" />
@@ -433,6 +439,9 @@ module ORDERS_Message
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("ba0718a2-9499-4e0f-be48-a32beaa63e91")]
                 transform (OrderServiceInputMessage.parameters) = ORDERS_Message.Transform_1 (EDIFACT_ORDERS);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("03602374-d8e3-4d46-b3c6-72c027d1042f")]
+                OrderServiceInputMessage.parameters.newOrder.Recipient = EDIFACT_ORDERS(EDI.Unb31) + ":" + EDIFACT_ORDERS(EDI.UNB3_2);
+                OrderServiceInputMessage.parameters.newOrder.Sender = EDIFACT_ORDERS(EDI.Unb21) + ":" + EDIFACT_ORDERS(EDI.UNB2_2);
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("84c2452f-27bc-4ef2-805f-db23522bcd2c")]
             send (OrderServicePort.PutOrder, OrderServiceInputMessage);

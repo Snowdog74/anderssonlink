@@ -142,6 +142,12 @@
       <TypeName>OrderService_schemas_microsoft_com_2003_10_Serialization</TypeName>
       <Namespace>ORDERS_Message</Namespace>
     </Schema>
+    <Schema Include="PropertySchema.xsd">
+      <SubType>
+      </SubType>
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>ORDERS_Message.PropertySchema</Namespace>
+    </Schema>
     <None Include="Service References\OrderServiceReference\ORDERS_Message.OrderServiceReference.OrderMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

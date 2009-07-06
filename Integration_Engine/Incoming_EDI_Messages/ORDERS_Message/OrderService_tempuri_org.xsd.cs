@@ -3,9 +3,14 @@ namespace ORDERS_Message {
     
     
     [SchemaType(SchemaTypeEnum.Document)]
+    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(ORDERS_Message.PropertySchema.Recipient), XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(ORDERS_Message.PropertySchema.Sender), XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "newOrder.Recipient", XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+    [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "newOrder.Sender", XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
     [System.SerializableAttribute()]
     [SchemaRoots(new string[] {@"GetOrders", @"GetOrdersResponse", @"DeleteOrder", @"DeleteOrderResponse", @"PutOrder", @"PutOrderResponse"})]
     [Microsoft.XLANGs.BaseTypes.SchemaReference(@"ORDERS_Message.OrderService_07_AnderssonLink_MessageDatabase_AccessServices_OrderService", typeof(ORDERS_Message.OrderService_07_AnderssonLink_MessageDatabase_AccessServices_OrderService))]
+    [Microsoft.XLANGs.BaseTypes.SchemaReference(@"ORDERS_Message.PropertySchema.PropertySchema", typeof(ORDERS_Message.PropertySchema.PropertySchema))]
     public sealed class OrderService_tempuri_org : Microsoft.XLANGs.BaseTypes.SchemaBase {
         
         [System.NonSerializedAttribute()]
@@ -13,13 +18,16 @@ namespace ORDERS_Message {
         
         [System.NonSerializedAttribute()]
         private const string _strSchema = @"<?xml version=""1.0"" encoding=""utf-16""?>
-<xs:schema xmlns:tns=""http://tempuri.org/"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" elementFormDefault=""qualified"" targetNamespace=""http://tempuri.org/"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
+<xs:schema xmlns:tns=""http://tempuri.org/"" xmlns:ns0=""https://ORDERS_Message.PropertySchema"" xmlns:b=""http://schemas.microsoft.com/BizTalk/2003"" elementFormDefault=""qualified"" targetNamespace=""http://tempuri.org/"" xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
   <xs:import schemaLocation=""ORDERS_Message.OrderService_07_AnderssonLink_MessageDatabase_AccessServices_OrderService"" namespace=""http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService"" />
   <xs:annotation>
     <xs:appinfo>
-      <references xmlns=""http://schemas.microsoft.com/BizTalk/2003"">
-        <reference targetNamespace=""http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService"" />
-      </references>
+      <b:references>
+        <b:reference targetNamespace=""http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService"" />
+      </b:references>
+      <b:imports>
+        <b:namespace prefix=""ns0"" uri=""https://ORDERS_Message.PropertySchema"" location=""ORDERS_Message.PropertySchema.PropertySchema"" />
+      </b:imports>
     </xs:appinfo>
   </xs:annotation>
   <xs:element name=""GetOrders"">
@@ -49,6 +57,16 @@ namespace ORDERS_Message {
     </xs:complexType>
   </xs:element>
   <xs:element name=""PutOrder"">
+    <xs:annotation>
+      <xs:appinfo>
+        <b:properties>
+          <b:property name=""ns0:Recipient"" xpath=""/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']"" />
+          <b:property name=""ns0:Sender"" xpath=""/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']"" />
+          <b:property distinguished=""true"" xpath=""/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']"" />
+          <b:property distinguished=""true"" xpath=""/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']"" />
+        </b:properties>
+      </xs:appinfo>
+    </xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2=""http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService"" minOccurs=""0"" name=""newOrder"" nillable=""true"" type=""q2:OrderMessage"" />
@@ -236,6 +254,10 @@ namespace ORDERS_Message {
         }
         
         [Schema(@"http://tempuri.org/",@"PutOrder")]
+        [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(ORDERS_Message.PropertySchema.Recipient), XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.PropertyAttribute(typeof(ORDERS_Message.PropertySchema.Sender), XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "newOrder.Recipient", XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Recipient' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
+        [Microsoft.XLANGs.BaseTypes.DistinguishedFieldAttribute(typeof(System.String), "newOrder.Sender", XPath = @"/*[local-name()='PutOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='newOrder' and namespace-uri()='http://tempuri.org/']/*[local-name()='Sender' and namespace-uri()='http://schemas.datacontract.org/2004/07/AnderssonLink.MessageDatabase.AccessServices.OrderService']", XsdType = @"string")]
         [System.SerializableAttribute()]
         [SchemaRoots(new string[] {@"PutOrder"})]
         public sealed class PutOrder : Microsoft.XLANGs.BaseTypes.SchemaBase {
